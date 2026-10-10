@@ -7,17 +7,32 @@
     <meta name="description" content="Flexarion est un studio indépendant de jeux vidéo de science-fiction basé à Aix-en-Provence.">
     <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
 <body>
 
     <header>
         <nav>
             <p class="logo"><strong>Flexarion</strong></p>
             <ul>
-                <li><a href="accueil">Accueil</a></li>
-                <li><a href="studio">Le Studio</a></li>
-                <li><a href="jeu">Jeux</a></li>
-                <li><a href="devlogs">Devlogs</a></li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#studio">Le Studio</a></li>
+                <li><a href="#jeu">Jeux</a></li>
+                <li><a href="#devlogs">Devlogs</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
