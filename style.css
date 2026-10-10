@@ -3,9 +3,9 @@
     --bg-surface: #12161f;
     --border-color: #1f2633;
     --text-main: #e2e8f0;
-    --text-muted: #aa94b8;
-    --accent: #8238f8;
-    --accent-hover: #a40ee9;
+    --text-muted: #94a3b8;
+    --accent: #7c3aed;         /* Violet foncé */
+    --accent-hover: #6d28d9;   /* Nuance encore plus sombre au survol */
     --radius: 8px;
     --max-w: 960px;
 }
@@ -155,7 +155,7 @@ li strong {
 .btn {
     display: inline-block;
     background-color: var(--accent);
-    color: #07090e;
+    color: #ffffff;
     font-weight: 600;
     padding: 0.75rem 1.4rem;
     border-radius: var(--radius);
