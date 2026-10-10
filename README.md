@@ -9,14 +9,6 @@
 
 ---
 
-<p align="center">
-  <a href="#-à-propos">À propos</a> •
-  <a href="#-projet-phare--anni-2810">Projet Anni 2810</a> •
-  <a href="#-devlogs--technologies">Devlogs & R&D</a> •
-  <a href="#-structure-du-site">Structure Web</a> •
-  <a href="#-contact--presse">Contact</a>
-</p>
-
 </div>
 
 ---
