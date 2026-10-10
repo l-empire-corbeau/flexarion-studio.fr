@@ -8,6 +8,7 @@
     <meta name="description" content="Suivez le journal de bord de développement de Flexarion : physique orbitale, rendu procédural et coulisses de Anni 2810.">
     <link rel="stylesheet" href="style.css?v=1">
 </head>
+
 <body>
 
     <header>
@@ -25,21 +26,51 @@
 
     <main>
         <section id="devlogs">
-            <h2>Devlogs Flexarion</h2>
+            <h2>Carnets de Bord & Devlogs Techniques</h2>
+            <p>Retrouvez ici les avancées de production, les choix d'architecture logicielle et les réflexions de conception menées par l'équipe de <a href="studio.html">notre studio à Aix-en-Provence</a>.</p>
+
+            <!-- DEVLOG #3 : GRAND DEVLOG TECHNIQUE -->
             <article class="card card-stack">
                 <header>
-                    <h3>Genèse d'un studio de developpement à Aix-en-Provence</h3>
-                    <p><small>Devlog #1 • 2026 • Par l'équipe Flexarion</small></p>
+                    <h3>Devlog #3 : Modélisation des trajectoires orbitales et inertie gravitationnelle réaliste</h3>
+                    <p><small>Publié en octobre 2026 • Par l'équipe de développement Flexarion</small></p>
                 </header>
-                <p>Pourquoi fonder Flexarion ? Retour sur les premières itérations de notre moteur, le choix d'un univers hard-SF réaliste et les premiers croquis du vaisseau Anni réalisés dans notre atelier aixois.</p>
+
+                <h4>1. Le pari de la Hard Science-Fiction</h4>
+                <p>Lorsque nous avons posé les bases de notre jeu <a href="jeux.html">Anni 2810</a>, un consensus s'est immédiatement imposé au sein de notre atelier provençal : refuser la facilité du vol spatial conventionnel façon arcade. Dans la majorité des productions actuelles, les vaisseaux se comportent comme des avions atmosphériques dans le vide. Chez <strong>Flexarion</strong>, nous souhaitions retranscrire la dureté physique du cosmos, le silence et l'angoisse calculatoire d'une navigation régie par la mécanique céleste pure.</p>
+                
+                <p>Dans notre univers, le vaisseau d'exploration — baptisé avec affection <strong>l'Explorateur Anni</strong> en hommage aux principes d'analyse mathématique rigoureuse qui sous-tendent sa trajectoire — ne dispose pas de carburant infini. Chaque poussée vectorielle modifie son orbite de manière irréversible selon les lois de Kepler et les équations de Newton.</p>
+
+                <h4>2. L'intégration du problème à N corps et optimisation CPU</h4>
+                <p>Intégrer une simulation gravitationnelle en temps réel dans une boucle de rendu à 60 images par seconde représentait un défi d'ingénierie colossal. Simuler l'attraction mutuelle exercée entre la mégastructure alien, les débris flottants et la carlingue du vaisseau nécessite de résoudre numériquement des systèmes d'équations différentielles complexes.</p>
+
+                <p>Nous avons d'abord expérimenté avec un intégrateur standard d'Euler explicite. Le résultat s'est révélé désastreux : accumulation d'erreurs d'arrondi, dérives orbitales spontanées et rupture de conservation d'énergie. L'équipe système s'est alors orientée vers un <strong>intégrateur symplectique de Verlet d'ordre 4</strong>, garantissant la conservation de l'énergie mécanique sur de très longues périodes de calcul sans faire exploser l'empreinte mémoire.</p>
+
+                <h4>3. Rendu procédural de la Mégastructure : l'Artefact</h4>
+                <p>L'Artefact alien au cœur de l'intrigue mesure plus de quatre-vingts kilomètres de diamètre. Il était hors de question de concevoir un maillage 3D statique d'une telle envergure sous peine d'anéantir la mémoire vidéo (VRAM) des configurations PC cibles. La solution a été d'élaborer un pipeline de génération procédurale par voxels assisté par des fonctions de bruit de gradient (Simplex Noise multi-octaves).</p>
+
+                <p>Grâce à cette approche, les coursives, les modules de confinement et les sas dépressurisés sont instanciés dynamiquement en fonction de la distance de la caméra (système de LOD progressif). Le joueur découvre ainsi un labyrinthe titanesque dont l'architecture interne s'adapte sans aucune coupure de chargement, renforçant l'immersion psychologique et la sensation de vertige architectural.</p>
+
+                <h4>4. Interface diégétique et gestion des systèmes vitaux</h4>
+                <p>Pour accentuer la dimension tactique, toutes les données relatives à la télémétrie, au bouclier thermique et au ratio d'oxygène sont intégrées directement sur les consoles de bord de la passerelle. Pas de barre de vie flottante ni d'interface intrusive : les pilotes doivent lire les instruments de bord, analyser les vecteurs de poussée et anticiper les fenêtres d'amarrage sous peine de voir l'orbite du vaisseau se dégrader irrémédiablement vers le centre d'attraction de l'anomalie.</p>
             </article>
 
+            <!-- DEVLOG #2 -->
             <article class="card card-stack">
                 <header>
-                    <h3>Simulation orbitale et architecture de l'Artefact</h3>
-                    <p><small>Devlog #2 • 2026 • Par l'équipe Flexarion</small></p>
+                    <h3>Devlog #2 : Simulation acoustique et propagation du son dans le vide</h3>
+                    <p><small>Publié en 2026 • Par l'équipe sonore Flexarion</small></p>
                 </header>
-                <p>Dans ce second journal de bord, l'équipe technique de Flexarion détaille la physique gravitationnelle et l'algorithme générant les coursives labyrinthiques de l'artefact alien de Anni 2810.</p>
+                <p>Comment concevoir une ambiance sonore saisissante dans un milieu où l'air n'existe pas ? Dans ce carnet, notre sound designer détaille l'utilisation de microphones de contact enregistrant la résonance des structures métalliques, créant une claustrophobie auditive où seuls les bruits internes au cockpit parviennent aux oreilles de l'équipage.</p>
+            </article>
+
+            <!-- DEVLOG #1 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #1 : Genèse d'un studio de développement indépendant à Aix-en-Provence</h3>
+                    <p><small>Publié en 2026 • Par l'équipe fondatrice</small></p>
+                </header>
+                <p>Pourquoi installer un studio de jeu vidéo de science-fiction au cœur de la Provence ? Retour sur la création de <strong>Flexarion</strong>, la constitution de l'équipe fondatrice et le choix de concevoir un univers sans compromis éditorial à destination des passionnés d'astrophysique.</p>
             </article>
         </section>
     </main>
