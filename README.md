@@ -60,6 +60,7 @@ Pour toute opportunité de test, interview presse ou partenariat :
 * 📧 **Email :** [contact@flexarion-studio.fr](mailto:contact@flexarion-studio.fr)
 * 📍 **Siège Social :** Studio Flexarion, 13100 Aix-en-Provence, France
 * 🐦 **X (Twitter) :** [@FlexarionStudio](https://twitter.com/FlexarionStudio)
+* **Collaborations**: Weiver-Review
 
 ---
 
