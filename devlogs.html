@@ -6,8 +6,8 @@
     <script defer src="https://cloud.umami.is/script.js" data-website-id="3bf3efef-8e42-4990-b7cd-e7f1e8b1d31f"></script>
     <title>Devlogs & Coulisses de Production | Studio Flexarion</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <meta name="description" content="Suivez le journal de bord de développement de Flexarion : physique orbitale, rendu procédural et coulisses de Anni 2810.">
-    <link rel="stylesheet" href="style.css?v=1">
+    <meta name="description" content="Suivez l'intégralité du journal de bord de développement de Flexarion : physique orbitale, rendu procédural, IA tactique, shaders et coulisses de production d'Anni 2810.">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
@@ -28,13 +28,388 @@
     <main>
         <section id="devlogs">
             <h2>Carnets de Bord & Devlogs Techniques</h2>
-            <p>Retrouvez ici les avancées de production, les choix d'architecture logicielle et les réflexions de conception menées par l'équipe de <a href="studio.html">notre studio à Aix-en-Provence</a>.</p>
+            <p>Retrouvez l'intégralité des archives de production, les choix d'architecture logicielle, les benchmarks graphiques et les réflexions de conception menées par l'équipe de <a href="studio.html">notre studio à Aix-en-Provence</a> sur notre Tactical-RPG Hard-SF <a href="jeux.html">Anni 2810</a>.</p>
+
+            <!-- DEVLOG #29 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #29 : Optimisation Steam Deck, profiling de la mémoire unifiée et shaders Vulkan</h3>
+                    <p><small>Publié en novembre 2026 • Par l'équipe Rendu & Optimisation Bas-Niveau</small></p>
+                </header>
+                <h4>1. Cibler l'APU monocuce d'une console portable sans sacrifier la fidélité</h4>
+                <p>La certification Steam Deck dès le lancement en Early Access constitue un impératif technique pour <em>Anni 2810</em>. Or, notre moteur C++ propriétaire pousse les calculs volumétriques et l'illumination globale par cônes de voxels à un niveau très exigeant. L'architecture unifiée de l'APU AMD (partageant 16 Go de LPDDR5 entre CPU et GPU) nous imposait de revoir la gestion des allocations mémoires volatiles pour éviter tout étranglement sur la bande passante mémoire (memory bandwidth starvation).</p>
+                <h4>2. Pipelines graphiques Vulkan et précompilation SPIR-V</h4>
+                <p>Sous Linux et Proton, la compilation à la volée des shaders peut engendrer de légers micro-saccades (stuttering). Nous avons donc isolé et sérialisé une banque de pipelines graphiques Vulkan statiques au démarrage. Les buffers de vertex et d'indices des structures modulaires de l'Artefact utilisent désormais une compression géométrique 16 bits half-float, réduisant la consommation VRAM globale de 38 % tout en garantissant un 60 FPS constant à un TDP bridé à 11 Watts.</p>
+            </article>
+
+            <!-- DEVLOG #28 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #28 : Modélisation des avaries en cascade et cinétique d'impact des micrométéorites</h3>
+                    <p><small>Publié en novembre 2026 • Par l'équipe Simulation & Physique</small></p>
+                </header>
+                <h4>1. La terreur des particules hypervéloces de la ceinture de Kuiper</h4>
+                <p>Dans l'espace profond, un débris de silicate de deux millimètres lancé à 40 kilomètres par seconde possède une énergie cinétique équivalente à un obus d'artillerie. Lorsque le bouclier Whipple de l'Explorateur Anni encaisse un impact hypervéloce, les dégâts ne sont jamais superficiels ni localisés à un simple compteur de points d'armure.</p>
+                <h4>2. Arbres de dépendances systémiques : l'effet domino</h4>
+                <p>Nous avons implémenté un graphe de dépendances cycliques reliant l'ensemble des sous-systèmes du vaisseau :</p>
+                <ul>
+                    <li>Une brèche dans un condenseur de fluide caloporteur augmente la température des matrices de calcul de bord.</li>
+                    <li>La surchauffe des calculateurs oblige l'IA de navigation à dégrader la fréquence d'actualisation de l'intégrateur orbital de 120 Hz à 30 Hz.</li>
+                    <li>Cette baisse de précision introduit une dérive sur les manœuvres de correction gyroscopique, consommant prématurément le monergol des propulseurs RCS.</li>
+                </ul>
+                <p>Le joueur doit alors détacher un technicien d'urgence en combinaison pressurisée à l'extérieur de la carlingue pour souder un patch de blindage composite tout en subissant le souffle thermique des tuyères.</p>
+            </article>
+
+            <!-- DEVLOG #27 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #27 : La synthèse granulaire au cœur des anomalies gravitationnelles de l'Artefact</h3>
+                    <p><small>Publié en octobre 2026 • Par le pôle Audio & Acoustique</small></p>
+                </header>
+                <h4>1. Donner une signature auditive aux singularités physiques</h4>
+                <p>Comment sonoriser un trou noir microscopique en rotation ou un champ de torsion temporelle au sein d'une coursive alien ? Les synthétiseurs classiques produisent trop souvent des textures électroniques impersonnelles. Nous voulions que les singularités de l'Artefact inspirent une angoisse minérale et tellurique.</p>
+                <h4>2. Moteurs granulaires procéduraux en C++</h4>
+                <p>Notre moteur audio charge des micro-échantillons de craquements de glace sous-marine de l'Antarctique et de résonances de câbles d'acier sous tension extrême. En fragmentant ces sons en milliers de grains d'une durée de 5 à 25 millisecondes, modulés dynamiquement selon la proximité du joueur avec le puits gravitationnel, l'ambiance sonore se déforme de manière non linéaire. Les basses fréquences s'étirent, la réverbération s'effondre en cône d'aspiration, avertissant auditivement le joueur d'une zone de cisaillement mortelle avant même que ses capteurs visuels ne s'affolent.</p>
+            </article>
+
+            <!-- DEVLOG #26 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #26 : Génération procédurale d'intérieurs modulaires par Wave Function Collapse (WFC)</h3>
+                    <p><small>Publié en octobre 2026 • Par l'équipe Génération Procédurale & Level Design</small></p>
+                </header>
+                <h4>1. Garantir la cohérence architecturale sans intervention manuelle</h4>
+                <p>L'intérieur de la mégastructure mesure des dizaines de kilomètres cubes. Pour que chaque incursion offre un agencement spatial inédit tout en respectant des règles de navigabilité stricte (sas étanches, conduits de ventilation interconnectés, salles des machines reliées à des réacteurs), nous avons abandonné les générateurs basés sur de simples arbres BSP au profit de l'algorithme <em>Wave Function Collapse</em> (WFC) en 3D.</p>
+                <h4>2. Matrices de contraintes topologiques tridimensionnelles</h4>
+                <p>Chaque module préfabriqué (chambre cryogénique, sas d'isolation, couloir tubulaire, puits de descente gravitationnelle) définit des connecteurs de faces compatibles assortis de poids probabilistes. L'algorithme effondre les superpositions d'états le long de la grille en propageant les restrictions de voisinage en temps quasi nul (&lt; 40 millisecondes pour un secteur complet de 10 000 voxels). Si une contradiction survient lors de la génération, un mécanisme de retour arrière (backtracking) résout le conflit sans jamais générer de sas borgne ou de couloir inaccessible.</p>
+            </article>
+
+            <!-- DEVLOG #25 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #25 : Balistique ionique et équations de transfert radiatif dans le vide</h3>
+                    <p><small>Publié en septembre 2026 • Par le pôle Balistique & Combat Tactique</small></p>
+                </header>
+                <h4>1. En finir avec les lasers visibles et continus</h4>
+                <p>Le poncif cinématographique du rayon laser vert ou rouge fendant l'espace comme une traînée de lumière continue est physiquement absurde. Dans le vide absolu, à moins que le faisceau photonique ne rencontre de la poussière circumstellaire ou des résidus d'éjection gazeuse, un tir à haute énergie est rigoureusement invisible pour un observateur latéral.</p>
+                <h4>2. Modèle de dispersion thermique et perforation par impulsion</h4>
+                <p>Dans <em>Anni 2810</em>, les armes à impulsion ionique tirent des paquets discrets de plasma confiné par champ toroïdal ou des faisceaux UV invisibles. Le tir n'est révélé au joueur que par deux manifestations physiques : l'ionisation brutale de la carlingue ciblée (point d'incandescence instantané sublimant le blindage) et la trace thermique captée par les lunettes infrarouges de reconnaissance. En combat rapproché, le tir perforant pulvérise les plaques composites internes en projetant un cône d'éclats métalliques microscopiques létaux pour tout soldat situé dans le cône arrière.</p>
+            </article>
+
+            <!-- DEVLOG #24 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #24 : Éclairage volumétrique adaptatif et diffusion Rayleigh pour brouillards froids</h3>
+                    <p><small>Publié en septembre 2026 • Par l'équipe Moteur Graphique</small></p>
+                </header>
+                <h4>1. L'atmosphère fantôme des modules en dépressurisation partielle</h4>
+                <p>Lorsque les chambres de décompression de l'Artefact laissent échapper de l'azote ou du fréon cryogénique dans des zones à température cryogénique (-180 °C), ces gaz condensent instantanément en un brouillard de micro-cristaux scintillants. Rendre cette brume en temps réel sans effondrer le budget GPU représentait un défi stylistique et technique de premier ordre.</p>
+                <h4>2. Froxels et diffusion de phase de Henyey-Greenstein</h4>
+                <p>Nous utilisons une structure de volumes frustum-aligned (appelée <em>froxels</em>) mise à jour en compute shaders asynchrones. Chaque cellule de froxel calcule l'accumulation de lumière diffusée par les projecteurs des combinaisons selon la fonction de phase de Henyey-Greenstein, capturant avec précision l'effet d'anisotropie vers l'avant. Les faisceaux des lampes torches percent ainsi les brumes toxiques de manière spectaculaire, soulignant l'isolement étouffant de vos troupes dans les entrailles de l'Artefact.</p>
+            </article>
+
+            <!-- DEVLOG #23 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #23 : Économie de circuit fermé et équilibre thermodynamique du support de vie</h3>
+                    <p><small>Publié en août 2026 • Par la cellule Game Design & Économie de Survie</small></p>
+                </header>
+                <h4>1. Rien ne se perd, rien ne se crée : la loi d'airain de l'Anni</h4>
+                <p>Contrairement aux RPG spatiaux traditionnels où l'oxygène est une simple ressource que l'on achète à un marchand galactique, le support de vie à bord de l'Explorateur Anni obéit aux lois strictes de la thermodynamique et du recyclage en circuit fermé (ECLSS - <em>Environmental Control and Life Support System</em>).</p>
+                <h4>2. La balance azote-oxygène et la régénération hydroponique</h4>
+                <p>Les réserves du vaisseau ne sont pas inépuisables :</p>
+                <ul>
+                    <li>Chaque sortie extravéhiculaire consomme irrémédiablement une fraction de gaz de chasse lors de la purge des sas.</li>
+                    <li>Les filtres à zéolithe absorbant le CO2 saturent et doivent être régénérés thermiquement via l'excédent de chaleur des réacteurs de propulsion.</li>
+                    <li>Si les cuves de culture spiruline subissent une chute de tension électrique consécutive à une manœuvre orbitale d'urgence, la régénération en dioxygène s'effondre en 48 heures in-game.</li>
+                </ul>
+                <p>Chaque décision tactique d'expédition réclame donc un calcul froid entre la dépense en fluide propulseur et la récolte de glace cométaire dans les cavités de la mégastructure.</p>
+            </article>
+
+            <!-- DEVLOG #22 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #22 : Déploiement d'une architecture Data-Oriented (DOD) et ECS pour la physique spatiale</h3>
+                    <p><small>Publié en août 2026 • Par l'équipe Core Engine & Architecture C++</small></p>
+                </header>
+                <h4>1. La fin des hiérarchies d'objets polymorphiques traditionnelles</h4>
+                <p>Au début du développement d'<em>Anni 2810</em>, la manipulation des entités physiques (débris d'astéroïdes, modules du vaisseau, drones sentinelles, conteneurs amovibles) reposait sur un modèle orienté objet classique avec héritage virtuel. Dès que la scène dépassait les 15 000 corps rigides en orbite basse, les défauts de cache L1/L2 (cache misses) saturaient le processeur, divisant le débit de simulation par quatre.</p>
+                <h4>2. Migration intégrale vers un Entity-Component-System (ECS) contigu</h4>
+                <p>Nous avons refactorisé le cœur physique vers une architecture de tables plates de données contiguës (SoA - <em>Structure of Arrays</em>). Les vecteurs de position, vitesses d'inertie et matrices d'inertie barycentriques sont désormais stockés consécutivement en mémoire centrale. Le CPU effectue désormais des boucles de calcul vectoriel SIMD (AVX2 / SSE4.2) d'une efficacité redoutable, permettant de simuler 100 000 particules orbitales à 120 Hz tout en n'utilisant que deux threads de calcul.</p>
+            </article>
+
+            <!-- DEVLOG #21 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #21 : L'art du HUD diégétique : intégration physique des compteurs sur les combinaisons EVA</h3>
+                    <p><small>Publié en juillet 2026 • Par le pôle Interface Utilisateur (UI/UX)</small></p>
+                </header>
+                <h4>1. Bannir les overlays bidimensionnels statiques</h4>
+                <p>Dans un jeu de survie hard-SF, coller des barres d'énergie fluorescentes en surimpression sur l'écran détruit immédiatement l'angoisse de l'isolement spatial. Notre direction artistique exigeait que toute information vitale existe physiquement dans l'espace tridimensionnel du cockpit ou sur la combinaison de l'astronaute.</p>
+                <h4>2. Afficheurs à cristaux liquides rétro-éclairés et projection sur visière polarisée</h4>
+                <p>Le rythme cardiaque, la réserve d'oxygène résiduelle en bars et l'intégrité de la couche de Kevlar s'affichent sur un manchon fixé sur l'avant-bras gauche du modèle 3D du personnage. Le joueur doit physiquement orienter son regard ou lever son bras pour lire sa télémétrie. En cas de bris de la visière du casque, les diodes de bord scintillent, des reflets d'arc électrique troublent la lecture, et l'alarme sonore de dépressurisation vibre par transducteur osseux directement sur le crâne du soldat.</p>
+            </article>
+
+            <!-- DEVLOG #20 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #20 : Système de déchirement de maillage en temps réel pour coques sous contrainte</h3>
+                    <p><small>Publié en juillet 2026 • Par l'équipe R&D Graphique</small></p>
+                </header>
+                <h4>1. Rendre compte de la torsion mécanique des structures monumentales</h4>
+                <p>Les forces de marée exercées par l'Artefact sur les débris spatiaux et les modules amarrés ne sont pas homogènes. Une station d'un kilomètre de long subit une attraction gravitationnelle différentielle entre son apogée et son périgée, engendrant des forces de cisaillement capables de sectionner des longerons d'acier.</p>
+                <h4>2. Algorithme de découpe volumétrique par plans de clivage</h4>
+                <p>Plutôt que d'échanger des modèles 3D pré-cassés (pre-fractured assets), nous avons conçu un système de clivage dynamique en compute shader. Lorsque la contrainte de cisaillement dépasse le module d'élasticité de Young du matériau, la topologie du maillage est scindée instantanément le long du plan de contrainte principal. Les fragments résultants héritent de leur propre tenseur d'inertie et sont injectés dans l'intégrateur de Verlet en tant que débris indépendants, créant des scènes de rupture cataclysmiques totalement uniques.</p>
+            </article>
+
+            <!-- DEVLOG #19 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #19 : Radiations cosmiques, inversion de bits (bit-flips) et pannes logicielles diégétiques</h3>
+                    <p><small>Publié en juin 2026 • Par l'équipe Gameplay Systémique</small></p>
+                </header>
+                <h4>1. La menace invisible des éjections de masse coronale</h4>
+                <p>Dans la ceinture de Kuiper, l'absence de magnétosphère protectrice expose l'Explorateur Anni et son équipage aux rayons cosmiques galactiques à haute énergie. Au-delà des dégâts cellulaires infligés aux tissus biologiques des astronautes, ces particules ionisantes traversent les puces électroniques non durcies et provoquent des retournements intempestifs de bits (Single Event Upset - SEU).</p>
+                <h4>2. Quand le calculateur de bord commet de véritables erreurs d'arrondi</h4>
+                <p>Nous avons directement traduit ce phénomène physique dans le gameplay. Si le blindage au bore du module informatique est endommagé lors d'un combat, des anomalies logicielles surviennent dans les calculateurs de bord :</p>
+                <ul>
+                    <li>Les vecteurs de prédiction de tir au tour par tour affichent une marge d'incertitude stochastique.</li>
+                    <li>L'horizon artificiel de navigation oscille de quelques degrés, désorientant le pilotage.</li>
+                    <li>L'ingénieur système doit sacrifier des points d'action pour exécuter un cycle de mémoire ECC (Error-Correcting Code) et réinitialiser les registres matériels pollués.</li>
+                </ul>
+            </article>
+
+            <!-- DEVLOG #18 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #18 : Modélisation des propulseurs à effet Hall et dissipation thermique infrarouge</h3>
+                    <p><small>Publié en juin 2026 • Par le pôle Physique & Simulation Spatiale</small></p>
+                </header>
+                <h4>1. La thermodynamique comme vecteur de discrétion tactique</h4>
+                <p>Dans le vide spatial, la furtivité thermique est une impossibilité théorique : chaque calorie dégagée par les réacteurs ou le métabolisme de l'équipage doit impérativement être rayonnée dans l'espace sous peine de cuire l'équipage vivant. Les propulseurs plasmiques à effet Hall de l'Anni délivrent une poussée spécifique prodigieuse mais chauffent les panneaux radiateurs à plus de 450 kelvins.</p>
+                <h4>2. Signature spectrale et détection radar passive</h4>
+                <p>Les drones sentinelles de l'Artefact traquent prioritairement les signatures spectrales dans l'infrarouge moyen (MWIR). Les joueurs doivent donc équilibrer leur profil thermique : replier temporairement les radiateurs pour masquer leur signature lors de l'approche d'une coursive hostile, tout en sachant que la chaleur s'accumule dans les réservoirs de cire à changement de phase (phase change materials - PCM). Si la capacité tampon sature avant la fin de l'infiltration, les alarmes thermiques s'enclenchent, forçant un délestage thermique immédiat qui trahit instantanément la position du commando.</p>
+            </article>
+
+            <!-- DEVLOG #17 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #17 : Cinématique inverse et locomotion procédurale en gravité zéro</h3>
+                    <p><small>Publié en mai 2026 • Par l'équipe Animation & Personnages</small></p>
+                </header>
+                <h4>1. Dépasser la rigidité des cycles de marche pré-enregistrés</h4>
+                <p>Faire évoluer un soldat en combinaison pressurisée dans un environnement sans gravité où les parois sont encombrées de câbles, de rampes et de sas asymétriques interdit le recours à des animations de marche prédéfinies. Une démarche classique paraîtrait complètement déconnectée du sol et détruirait l'immersion.</p>
+                <h4>2. Solveur FABRIK et points d'ancrage dynamiques</h4>
+                <p>Nous avons élaboré un système de locomotion procédurale hybride s'appuyant sur l'algorithme FABRIK (<em>Forwards And Backwards Reaching Inverse Kinematics</em>). À chaque déplacement sur la grille tactique, les membres de l'astronaute recherchent les surfaces magnétisables les plus proches. Si une détonation pulvérise une plaque de sol, le personnage compense son équilibre en étendant un bras vers une rambarde adjacente ou en s'agrippant d'urgence avec son mousqueton de sécurité, générant des mouvements fluides, lourds et réalistes.</p>
+            </article>
+
+            <!-- DEVLOG #16 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #16 : Pipeline de textures PBR nanométriques et photométrie des alliages métalliques</h3>
+                    <p><small>Publié en mai 2026 • Par le pôle Art & Texturing</small></p>
+                </header>
+                <h4>1. Donner de l'histoire et de l'âge aux matériaux industriels</h4>
+                <p>Les coursives de l'Explorateur Anni portent les stigmates de six années d'errance dans le système solaire externe. Nous voulions éviter l'aspect plastique ou chromé trop lisse typique de la science-fiction grand public. Les alliages de titane et d'inconel utilisés à bord devaient refléter l'érosion par le vent solaire et les dépôts d'oxydation consécutifs à d'anciennes fuites d'hydrazine.</p>
+                <h4>2. Shaders multicouches avec micro-rugosité physique (GGX Cook-Torrance)</h4>
+                <p>Nos artistes ont conçu un pipeline de matériaux paramétriques sous Substance Designer intégrant des coefficients réels de réfraction complexe (n et k) pour les métaux conducteurs. Grâce à une répartition minutieuse de la micro-rugosité selon le modèle GGX, la lumière des torches rasantes révèle les rayures microscopiques d'usinage, les traces de suie sur les répartiteurs électriques et la patine usée des poignées d'ouverture manuelle des sas de survie.</p>
+            </article>
+
+            <!-- DEVLOG #15 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #15 : Arbre technologique de rétro-ingénierie et recherche sur les alliages aliens</h3>
+                    <p><small>Publié en avril 2026 • Par la cellule Game Design & Équilibrage</small></p>
+                </header>
+                <h4>1. La science comme récompense d'exploration</h4>
+                <p>Dans <em>Anni 2810</em>, vous ne débloquez pas des compétences par magie en accumulant des points d'expérience abstraits. Chaque avancée technologique est le fruit d'une analyse rigoureuse des artefacts et alliages inconnus récupérés dans les entrailles de l'Artefact.</p>
+                <h4>2. Risques de contamination et protocoles de décontamination</h4>
+                <p>L'étude d'un fragment de supraconducteur alien au laboratoire de bord réclame des compromis critiques :</p>
+                <ul>
+                    <li>Allouer des mégawatts d'énergie électrique au spectromètre de masse prive les quartiers d'équipage d'éclairage standard.</li>
+                    <li>Certains échantillons de matière dégagent des isotopes radioactifs instables nécessitant de confiner le laboratoire sous atmosphère inerte d'argon.</li>
+                    <li>Un protocole d'analyse mal conduit peut entraîner une défaillance de confinement, contaminant l'air du pont scientifique et forçant une quarantaine d'urgence.</li>
+                </ul>
+                <p>Mais le jeu en vaut la chandelle : déchiffrer ces matrices permet de forger des blindages polarisés capables de dévier les décharges de plasma des drones sentinelles.</p>
+            </article>
+
+            <!-- DEVLOG #14 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #14 : Système de caméra cinématique orbitale et rendu de la courbure de la Terre et des lunes</h3>
+                    <p><small>Publié en avril 2026 • Par l'équipe Rendu & Visuels</small></p>
+                </header>
+                <h4>1. Le vertige des échelles monumentales</h4>
+                <p>L'un des plus grands écueils visuels dans les simulateurs spatiaux est la perte d'échelle : faute de points de repère atmosphériques, une lune de 500 kilomètres et un astéroïde de 50 mètres finissent par se ressembler à l'écran. Dans <em>Anni 2810</em>, nous devions restituer le gigantisme oppressant de la mégastructure orbitant autour de son astéroïde parent.</p>
+                <h4>2. Double précision logarithmique de la matrice de projection (Logarithmic Z-Buffer)</h4>
+                <p>Les tampons de profondeur (Z-Buffers) 24 bits standard provoquent un scintillement intolérable (Z-fighting) lorsqu'un objet situé à cinquante centimètres du casque de l'astronaute doit coexister dans la même passe de rendu qu'un corps céleste distant de 300 000 kilomètres. Nous avons réécrit les vertex shaders de projection pour utiliser un tampon logarithmique inverse en virgule flottante 32 bits, garantissant une netteté absolue de l'avant-plan immédiat jusqu'à l'horizon courbé des lunes gelées de Kuiper.</p>
+            </article>
+
+            <!-- DEVLOG #13 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #13 : Programmation concurrente et parallélisme sans verrou (Lock-Free) pour le moteur de ticks</h3>
+                    <p><small>Publié en mars 2026 • Par l'équipe Bas-Niveau & Performance</small></p>
+                </header>
+                <h4>1. Éliminer les blocages de threads (Deadlocks) dans la boucle principale</h4>
+                <p>Simuler simultanément l'état physiologique de 12 membres d'équipage, les flux gazeux de 40 coursives, l'IA de 60 automates et la mécanique céleste de l'ensemble du complexe réclamait une architecture massivement multithreadée. L'utilisation de verrous mutex traditionnels aurait causé des temps d'attente prohibitifs entre les cœurs CPU.</p>
+                <h4>2. Anneaux circulaires de messages sans verrou (Ring Buffers Lock-Free)</h4>
+                <p>Chaque sous-système (physique, IA, audio, rendu) tourne sur des threads dédiés isolés qui s'échangent des commandes immuables via des structures atomiques en file d'attente circulaire (Ring Buffers avec opérations atomiques <code>std::atomic</code> et barrières de mémoire ordonnées). Aucun thread de calcul ne bloque jamais un autre : si le thread de rendu prend du retard, la boucle physique continue d'intégrer les trajectoires orbitales à fréquence constante, évitant toute désynchronisation spatiale lors des manœuvres critiques.</p>
+            </article>
+
+            <!-- DEVLOG #12 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #12 : Simulation des communications par paquets radio et latence relativiste</h3>
+                    <p><small>Publié en mars 2026 • Par le pôle Réseau & Narration Systémique</small></p>
+                </header>
+                <h4>1. Le gouffre de la distance : quand les ordres mettent des minutes à voyager</h4>
+                <p>Dans la hard science-fiction, la vitesse de la lumière n'est pas une simple constante physique abstraite : c'est une contrainte opérationnelle impitoyable. Lorsque l'équipe de reconnaissance progresse au fond des coursives de l'Artefact, les signaux radio UHF rebondissent sur les parois métalliques et subissent une atténuation féroce avant d'atteindre l'antenne parabolique de l'Explorateur Anni.</p>
+                <h4>2. Brouillage spectral et messages corrompus</h4>
+                <p>Les ordres tactiques transmis par le commandant depuis la passerelle ne sont pas instantanés. Si un blindage dense sépare votre chef d'escouade de ses hommes, les transmissions vocales se dégradent en bruit blanc, et les instructions de tir doivent être répétées. Les joueurs doivent positionner stratégiquement des balises relais hertziennes le long de leur parcours pour maintenir une chaîne de commandement opérationnelle, sous peine de voir leurs subordonnés agir de manière autonome face aux imprévus.</p>
+            </article>
+
+            <!-- DEVLOG #11 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #11 : Tenseurs de contrainte mécanique et déformations élastiques des châssis modulaires</h3>
+                    <p><small>Publié en février 2026 • Par l'équipe Simulation Mécanique</small></p>
+                </header>
+                <h4>1. Les coques de vaisseaux ne sont pas des blocs indéformables</h4>
+                <p>Lors d'une poussée à pleine puissance des moteurs nucléothermiques, l'Explorateur Anni subit des accélérations de plusieurs g qui compriment sa structure longitudinale. Modéliser le vaisseau comme un solide rigide parfait aurait retiré toute tension dramatique aux manœuvres de rentrée orbitale.</p>
+                <h4>2. Modèle éléments finis simplifié pour calculs temps réel</h4>
+                <p>Nous avons implémenté un réseau de ressorts torsionnels et de poutres virtuelles reliant chaque baie d'amarrage. Lorsque le vaisseau braque brusquement ses tuyères orientables, les vibrations harmoniques se propagent dans les coursives sous forme de grincements métalliques sinistres. Si la résonance acoustique rencontre la fréquence propre de la carlingue, les rivets cèdent, provoquant des micro-brèches dans les réservoirs de propergol.</p>
+            </article>
+
+            <!-- DEVLOG #10 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #10 : Élaboration de la palette chromatique d'Anni 2810 : obscurité et lueurs ioniques</h3>
+                    <p><small>Publié en janvier 2026 • Par la Direction Artistique</small></p>
+                </header>
+                <h4>1. Rompre avec la monochromie froide</h4>
+                <p>Beaucoup de titres de science-fiction tombent dans le piège d'un gris métallique uniforme et austère. Pour <em>Anni 2810</em>, notre atelier d'Aix-en-Provence a puisé son inspiration dans les photographies brutes des sondes Cassini et New Horizons, mêlant l'obscurité insondable de l'espace profond à des contrastes chromatiques saisissants.</p>
+                <h4>2. Le langage visuel des spectres d'énergie</h4>
+                <p>Chaque type de rayonnement ou d'état de dangerosité possède son code spectral rigoureux :</p>
+                <ul>
+                    <li><strong>Violet profond et pourpre spectral :</strong> Émissions de matière noire et singularités gravitationnelles de l'Artefact.</li>
+                    <li><strong>Jaune sodium et ambre texturé :</strong> Systèmes d'alerte pressurisée et éclairages d'urgence des modules humains.</li>
+                    <li><strong>Bleu azur électrique :</strong> Torches au plasma et propulseurs ioniques à xénon en pleine décharge.</li>
+                </ul>
+                <p>Ce contraste donne à notre univers une identité graphique immédiatement identifiable tout en restant rigoureusement ancré dans une esthétique industrielle crédible.</p>
+            </article>
+
+            <!-- DEVLOG #9 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #9 : Simulation de la dépressurisation explosive et dynamique des fluides gazeux</h3>
+                    <p><small>Publié en novembre 2026 • Par l'équipe moteur & physique Flexarion</small></p>
+                </header>
+
+                <h4>1. Quand une brèche dans la coque redéfinit l'échiquier tactique</h4>
+                <p>Dans <em>Anni 2810</em>, l'environnement n'est jamais un simple décor passif. Lors des combats au tour par tour dans les dédales de l'Artefact, perforer accidentellement ou délibérément une cloison pressurisée transforme radicalement la topologie de l'affrontement. Un sas éventré ne se contente pas d'appliquer un malus cosmétique : il déclenche un appel d'air violent, balayant les objets légers, déstabilisant les unités non arrimées et expulsant les particules en suspension dans le vide intersidéral.</p>
+
+                <h4>2. Modèle cellulaire par automates et équation de Navier-Stokes simplifiée</h4>
+                <p>Calculer une dynamique des fluides par éléments finis (CFD) à chaque tick physique aurait saturé les threads de calcul CPU. Nous avons donc conçu un solveur volumétrique basé sur une grille 3D d'automates cellulaires communicants. Chaque voxel de la coursive stocke des valeurs discrètes de pression atmosphérique (en kilopascals), de vecteur de vélocité gazeuse et de température locale.</p>
+                <p>Dès qu'une cellule frontière s'ouvre sur le vide (pression nulle), l'onde de détente se propage selon un schéma en différences finies conservant la masse d'oxygène. Les corps présents dans la trajectoire du flux subissent une force d'entraînement aérodynamique proportionnelle à leur maître-couple et au gradient de pression, forçant le joueur à ancrer ses spécialistes au sol via des bottes magnéto-adhésives avant d'engager des tirs à énergie perforante.</p>
+
+                <h4>3. Impact physiologique et compromis de survie</h4>
+                <p>La perte de pression engendre une hypoxie rapide pour les membres d'équipage dont la combinaison a été altérée. L'interface diégétique réagit instantanément : les alertes visuelles passent au rouge ambré, l'audio s'étouffe pour simuler la disparition du milieu de propagation de l'onde acoustique, et le joueur ne dispose que de deux tours d'action pour activer les portes blindées d'isolement d'urgence.</p>
+            </article>
+
+            <!-- DEVLOG #8 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #8 : Arbres de comportement (Behavior Trees) et IA tactique des nuées de drones aliens</h3>
+                    <p><small>Publié en octobre 2026 • Par le pôle Gameplay & Intelligence Artificielle</small></p>
+                </header>
+
+                <h4>1. Éviter le piège de l'IA omnisciente</h4>
+                <p>L'un des défis majeurs dans le design d'un Tactical-RPG spatial réside dans l'intelligence artificielle des automates découverts à bord de l'Artefact. Nous voulions éviter deux écueils classiques : l'IA télépathique qui connaît la position de vos commandos à travers les murs de titane, et l'IA idiote qui avance droit dans vos lignes de mire. Les drones aliens ne communiquent pas par magie ; ils utilisent un réseau radio local à portée optique et acoustique restreinte.</p>
+
+                <h4>2. Hiérarchie par tableaux noirs partagés (Blackboards) et champs de menace</h4>
+                <p>L'architecture repose sur des <em>Behavior Trees</em> modulaires connectés à des mémoires partagées au sein d'une même escouade mécanique. Lorsqu'un drone de maintenance repère une anomalie ou détecte un bruit de perforation, il ne charge pas aveuglément :</p>
+                <ul>
+                    <li>Il évalue la distance avec le reste de son nœud réseau et transmet une signature radar locale.</li>
+                    <li>L'automate le plus proche prend le rôle de sentinelle de couverture en verrouillant un cône de tir suppressif.</li>
+                    <li>Les unités plus agiles exploitent les conduits de ventilation axiaux pour contourner l'équipage de l'Explorateur Anni et couper les lignes de repli vers le sas de confinement.</li>
+                </ul>
+                <p>Cette coordination émergente oblige le joueur à adopter une rigueur chirurgicale : brouiller les signaux radiofréquences, utiliser des pièges thermiques ou saboter les relais d'alimentation de l'Artefact avant de franchir un carrefour stratégique.</p>
+            </article>
+
+            <!-- DEVLOG #7 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #7 : Raymarching, Voxel Cone Tracing et illumination globale des coursives dépressurisées</h3>
+                    <p><small>Publié en septembre 2026 • Par l'équipe Rendu & Shaders</small></p>
+                </header>
+
+                <h4>1. La lumière dans l'abîme : l'obscurité comme élément de tension</h4>
+                <p>L'Artefact alien est plongé dans une pénombre séculaire interrompue uniquement par de rares réacteurs thermonucléaires pulsant au rythme des marées gravitationnelles, ou par les torches halogènes des combinaisons spatiales. Pour rendre justice à cette atmosphère de claustration monumentale, notre moteur de rendu sur mesure devait gérer des rebonds lumineux réalistes en temps réel sans écrouler le framerate.</p>
+
+                <h4>2. Une implémentation sur mesure du Voxel Cone Tracing</h4>
+                <p>Au lieu de précalculer des cartes de lumière statiques (ce qui était incompatible avec la disposition procédurale changeante de chaque expédition), nous avons développé une hiérarchie d'octrees éparses de voxels (SVO - <em>Sparse Voxel Octree</em>) régénérée à la volée. Les cônes de raymarching tracent les rebonds indirects de la lumière :</p>
+                <ul>
+                    <li>Les éclairs bleutés des arcs magnétiques se reflètent sur le métal oxydé des cloisons avec des aberrations chromatiques physiques.</li>
+                    <li>La lumière volumétrique des projecteurs s'épaissit au contact des micro-cristaux de glace formés par les fuites de liquide caloporteur.</li>
+                    <li>L'extinction progressive d'un générateur plonge instantanément une salle dans un noir absolu, ne laissant que les voyants phosphorescents des consoles diégétiques pour guider le regard.</li>
+                </ul>
+                <p>Ce pipeline garantit une fidélité visuelle de premier ordre tout en maintenant une cible stable de 60 images par seconde sur les machines de milieu de gamme et sur Steam Deck.</p>
+            </article>
+
+            <!-- DEVLOG #6 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #6 : Santé psychologique, claustrophobie et stress d'équipage : l'algorithme sous le capot</h3>
+                    <p><small>Publié en août 2026 • Par la cellule Game Design & Écriture Narrative</small></p>
+                </header>
+
+                <h4>1. L'ennemi intérieur : le facteur humain face au vide</h4>
+                <p>Dans <em>Anni 2810</em>, la jauge d'intégrité physique de vos astronautes n'est que la moitié de l'équation de survie. Face au gigantisme incompréhensible de l'Artefact, à l'obscurité oppressante et aux cadences de réparations critiques, la santé mentale de vos spécialistes s'érode inéluctablement. Un chef mécanicien en crise de panique refusera de s'aventurer dans un sas dépressurisé ; un astrophysicien en état de choc cognitif interprétera faussement les signaux de télémétrie orbitale.</p>
+
+                <h4>2. Modèle mathématique d'accumulation de stress</h4>
+                <p>L'état psychologique de chaque membre d'équipage est modélisé par une équation différentielle tenant compte de multiples inducteurs de tension environnementale :</p>
+                <ul>
+                    <li><strong>Facteur d'isolement spatial :</strong> Distance kilométrique séparant le soldat du module principal de l'Explorateur Anni.</li>
+                    <li><strong>Surpression sensorielle :</strong> Bruit continu des sirènes d'alarme, clignotement erratique des éclairages d'urgence et niveau résiduel de CO2 dans la visière.</li>
+                    <li><strong>Traumatismes d'expédition :</strong> Pertes de camarades, échecs critiques lors de manœuvres orbitales ou exposition directe aux architectures non euclidiennes de la mégastructure.</li>
+                </ul>
+                <p>Lorsque le seuil de rupture psychologique est franchi, l'astronaute développe des traits de comportement persistants : <em>Paranoïa aiguë</em> (refus d'assistance médicale par peur d'infection), <em>Tétanie cinétique</em> (perte de la moitié des points d'action par tour) ou au contraire <em>Hyperlucidité sacrificielle</em> débloquant des actions désespérées temporaires.</p>
+            </article>
+
+            <!-- DEVLOG #5 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #5 : De la CAO spatiale aux polygones : conception des modules de l'Explorateur Anni</h3>
+                    <p><small>Publié en juillet 2026 • Par le département Conception Artistique & 3D</small></p>
+                </header>
+
+                <h4>1. Le fonctionnalisme industriel au service de la crédibilité</h4>
+                <p>Concevoir le vaisseau <strong>Explorateur Anni</strong> a débuté par un refus catégorique des carlingues profilées façon chasseur aérodynamique. Dans le vide stellaire, l'aérodynamisme n'a aucun sens. Guidés par les principes d'ingénierie aérospatiale contemporaine et les travaux de la NASA et de l'ESA, nous avons pensé le vaisseau comme un ensemble modulaire rigide : treillis tubulaires de carbone, réservoirs toriques de propergol cryogénique, boucliers Whipple anti-météorites et radiateurs thermiques déployables.</p>
+
+                <h4>2. Ergonomie intérieure et design diégétique</h4>
+                <p>À l'intérieur de l'Anni, chaque couloir comporte des poignées de préhension pour les phases en microgravité, des rails de guidage pour les conteneurs d'échantillons et des interfaces à contacteurs mécaniques renforcés. Nous avons banni les écrans holographiques transparents au profit d'écrans cathodiques renforcés et de diodes électroluminescentes aux codes couleur militaires normalisés. Le joueur ressent ainsi physiquement le poids de la machine, sa robustesse mais aussi sa vulnérabilité face aux contraintes thermiques extrêmes de la ceinture de Kuiper.</p>
+            </article>
+
+            <!-- DEVLOG #4 -->
+            <article class="card card-stack">
+                <header>
+                    <h3>Devlog #4 : Architecture réseau et sérialisation binaire pour sauvegardes déterministes</h3>
+                    <p><small>Publié en mai 2026 • Par l'équipe Core Engine</small></p>
+                </header>
+
+                <h4>1. Le casse-tête de la persistance dans un univers procédural dynamique</h4>
+                <p>Dans un jeu combinant simulation orbitale newtonienne, dizaines de milliers de débris simulés par intégrateur Verlet et état cellulaire de chaque coursive de l'Artefact, la sauvegarde d'un état de partie ne pouvait pas se résumer à un export JSON verbeux de plusieurs centaines de mégaoctets. Un joueur qui recharge sa partie au beau milieu d'une manœuvre de correction d'orbite doit retrouver exactement les mêmes vecteurs d'inertie à la microseconde près.</p>
+
+                <h4>2. Sérialisation déterministe et compression bit-packing</h4>
+                <p>Nous avons conçu un système de flux binaire compact à précision fixe (Fixed-Point Math) pour éliminer les incohérences de calcul en virgule flottante entre différentes architectures de processeurs (x86_64 et ARM). Les composantes orbitales, les coordonnées spatiales des modules et l'inventaire complet des sas sont sérialisés dans un snapshot binaire compressé via l'algorithme LZ4. Le résultat : des sauvegardes instantanées inférieures à 850 kilo-octets, sans le moindre micro-gel lors des points de contrôle automatiques.</p>
+            </article>
 
             <!-- DEVLOG #3 : GRAND DEVLOG TECHNIQUE -->
             <article class="card card-stack">
                 <header>
                     <h3>Devlog #3 : Modélisation des trajectoires orbitales et inertie gravitationnelle réaliste</h3>
-                    <p><small>Publié en octobre 2026 • Par l'équipe de développement Flexarion</small></p>
+                    <p><small>Publié en mars 2026 • Par l'équipe de développement Flexarion</small></p>
                 </header>
 
                 <h4>1. Le pari de la Hard Science-Fiction</h4>
@@ -59,19 +434,34 @@
             <!-- DEVLOG #2 -->
             <article class="card card-stack">
                 <header>
-                    <h3>Devlog #2 : Simulation acoustique et propagation du son dans le vide</h3>
-                    <p><small>Publié en 2026 • Par l'équipe sonore Flexarion</small></p>
+                    <h3>Devlog #2 : Simulation acoustique et propagation du son dans le vide spatial</h3>
+                    <p><small>Publié en janvier 2026 • Par l'équipe sonore Flexarion</small></p>
                 </header>
-                <p>Comment concevoir une ambiance sonore saisissante dans un milieu où l'air n'existe pas ? Dans ce carnet, notre sound designer détaille l'utilisation de microphones de contact enregistrant la résonance des structures métalliques, créant une claustrophobie auditive où seuls les bruits internes au cockpit parviennent aux oreilles de l'équipage.</p>
+
+                <h4>1. Silence absolu versus tension dramatique</h4>
+                <p>Comment concevoir une ambiance sonore saisissante dans un milieu où l'air n'existe pas ? Le vide spatial est un isolant parfait : aucune détonation lointaine ne peut y être entendue. Mais faire le choix d'un silence absolu tout au long du jeu aurait vidé l'expérience de sa charge émotionnelle. Pour <em>Anni 2810</em>, nous avons fait le choix radical de la conduction solidienne.</p>
+
+                <h4>2. Enregistrement par microphones de contact et synthèse modale</h4>
+                <p>Dans notre jeu, le joueur n'entend que ce qui se transmet par contact direct à travers les structures rigides : la vibration sourde des turbines de pompage à travers les bottes magnétiques de l'astronaute, le cliquetis métallique des micrométéorites martelant la coque extérieure, ou le souffle saccadé résonnant à l'intérieur du casque pressurisé. Pour concevoir cette bibliothèque sonore organique, nous avons fixé des capteurs piézoélectriques sur des cuves sous pression et des tuyauteries en titane, créant une claustrophobie auditive viscérale.</p>
             </article>
 
             <!-- DEVLOG #1 -->
             <article class="card card-stack">
                 <header>
                     <h3>Devlog #1 : Genèse d'un studio de développement indépendant à Aix-en-Provence</h3>
-                    <p><small>Publié en 2026 • Par l'équipe fondatrice</small></p>
+                    <p><small>Publié en 2025 • Par l'équipe fondatrice Flexarion</small></p>
                 </header>
-                <p>Pourquoi installer un studio de jeu vidéo de science-fiction au cœur de la Provence ? Retour sur la création de <strong>Flexarion</strong>, la constitution de l'équipe fondatrice et le choix de concevoir un univers sans compromis éditorial à destination des passionnés d'astrophysique.</p>
+
+                <h4>1. Ériger un bastion de hard-SF sous le ciel provençal</h4>
+                <p>Pourquoi installer un studio de jeu vidéo spécialisé dans la hard science-fiction au cœur d'Aix-en-Provence ? Loin des grands hubs industriels saturés, la Provence offre un cadre de concentration intellectuelle exceptionnel. Fondé par un noyau d'ingénieurs passionnés d'astrophysique, de programmeurs systèmes et d'artistes numériques, <strong>Flexarion</strong> est né d'un constat sans appel : le marché du jeu d'exploration spatiale manque cruellement de titres intransigeants qui respectent l'intelligence scientifique du joueur.</p>
+
+                <h4>2. La charte éditoriale d'Anni 2810</h4>
+                <p>Dès le premier jour, notre feuille de route a fixé trois commandements immuables :</p>
+                <ul>
+                    <li><strong>Aucune concession à la gravité simplifiée :</strong> La physique newtonienne dicte chaque trajectoire.</li>
+                    <li><strong>Une esthétique rétro-industrielle fonctionnelle :</strong> Pas de technologie magique inexpliquée, chaque voyant et chaque sas ont une fonction documentée.</li>
+                    <li><strong>Une narration émergente par les systèmes :</strong> Ce sont vos choix d'équipage, vos pannes thermiques et vos compromis éthiques qui écrivent le récit de l'expédition Kuiper.</li>
+                </ul>
             </article>
         </section>
     </main>
