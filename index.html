@@ -1,40 +1,82 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="3bf3efef-8e42-4990-b7cd-e7f1e8b1d31f"></script>
-    <title>Flexarion | Studio Indépendant de Jeux Vidéo de Science-Fiction à Aix-en-Provence</title>
-    <link rel="icon" href="assets/images/favicon.png" sizes="96x96">
-    <meta name="description" content="Flexarion conçoit des expériences vidéoludiques de science-fiction immersive repoussant les frontières de l'exploration spatiale.">
+    <title>Flexarion | Studio Indépendant de Jeux Vidéo Science-Fiction | Aix-en-Provence</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <meta name="description" content="Flexarion est un studio indépendant de jeux vidéo de science-fiction basé à Aix-en-Provence. Découvrez Anni 2810, Nexus Void, Helios Protocol et nos autres jeux Hard-SF.">
+    <meta property="og:title" content="Flexarion | Studio Indépendant de Jeux Vidéo Science-Fiction">
+    <meta property="og:description" content="Studio indépendant français créant des jeux vidéo de science-fiction immersifs avec physique réaliste et génération procédurale.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flexarion-studio.fr/">
+    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Flexarion">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flexarion | Studio Indépendant de Jeux Vidéo Science-Fiction">
+    <meta name="twitter:description" content="Studio indépendant français créant des jeux de science-fiction immersifs. Physique réaliste, narration émergente, Aix-en-Provence.">
+    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
     <script type="application/ld+json">
+    [{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Flexarion",
+        "url": "https://flexarion-studio.fr",
+        "logo": "https://flexarion-studio.fr/assets/images/favicon.png",
+        "description": "Studio indépendant de jeux vidéo de science-fiction basé à Aix-en-Provence, France.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aix-en-Provence",
+            "postalCode": "13100",
+            "addressCountry": "FR"
+        },
+        "sameAs": ["https://twitter.com/FlexarionStudio"],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@flexarion-studio.fr",
+            "contactType": "customer service"
+        }
+    },
     {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Flexarion",
-    "url": "https://flexarion-studio.fr",
-    "description": "Studio indépendant de jeux vidéo de science-fiction basé à Aix-en-Provence.",
-    "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Aix-en-Provence",
-        "postalCode": "13100",
-        "addressCountry": "FR"
-    }
-    }
-</script>
-    <link rel="stylesheet" href="assets/stylesheets/style.css?v=1">
-    <link rel="canonical" href="https://flexarion-studio.fr/"/>
-    <link rel="alternate" hreflang="fr-fr" href="https://flexarion-studio.fr/"/>
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Flexarion",
+        "url": "https://flexarion-studio.fr",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://flexarion-studio.fr/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Jeux Flexarion",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Anni 2810", "url": "https://flexarion-studio.fr/jeux.html#anni-2810"},
+            {"@type": "ListItem", "position": 2, "name": "Nexus Void", "url": "https://flexarion-studio.fr/jeux.html#nexus-void"},
+            {"@type": "ListItem", "position": 3, "name": "Helios Protocol", "url": "https://flexarion-studio.fr/jeux.html#helios-protocol"},
+            {"@type": "ListItem", "position": 4, "name": "Chronos Drift", "url": "https://flexarion-studio.fr/jeux.html#chronos-drift"},
+            {"@type": "ListItem", "position": 5, "name": "Stellar Forge", "url": "https://flexarion-studio.fr/jeux.html#stellar-forge"}
+        ]
+    }]
+    </script>
+    <link rel="stylesheet" href="assets/stylesheets/style.css?v=3">
+    <link rel="canonical" href="https://flexarion-studio.fr/">
+    <link rel="alternate" hreflang="fr-fr" href="https://flexarion-studio.fr/">
 </head>
 <body>
 
     <header>
         <nav>
             <p class="logo"><a href="index.html"><strong>Flexarion</strong></a></p>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="studio.html">Le Studio</a></li>
-                <li><a href="jeux.html">Jeux</a></li>
+                <li><a href="jeux.html">Nos Jeux</a></li>
                 <li><a href="devlogs.html">Devlogs</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -42,17 +84,141 @@
     </header>
 
     <main>
+        <!-- ═══════ HERO ═══════ -->
         <section id="accueil">
-            <p class="tagline">Studio de jeux vidéo indépendant</p>
-            <h1>L'odyssée SF façonnée par Flexarion</h1>
-            <p>Basé à Aix-en-Provence, le studio <strong>Flexarion</strong> conçoit des expériences vidéoludiques de science-fiction immersive repoussant les frontières de l'exploration spatiale et de la narration interactive.</p>
-            <p><a href="jeux.html" class="btn">Découvrir Anni 2810</a></p>
+            <p class="tagline">Studio de jeux vidéo indépendant · Aix-en-Provence</p>
+            <h1>Créateurs d'univers de science-fiction immersifs</h1>
+            <p>Fondé au cœur d'<strong>Aix-en-Provence</strong>, le studio <strong>Flexarion</strong> conçoit des jeux vidéo de <strong>science-fiction</strong> exigeants qui placent la rigueur scientifique au centre de chaque expérience. Notre équipe de développeurs passionnés d'astrophysique et de hard science-fiction repousse les frontières du jeu vidéo indépendant français avec un moteur C++ propriétaire, une physique orbitale réaliste basée sur les équations newtoniennes, et des systèmes de <strong>génération procédurale</strong> avancés. De l'exploration de mégastructures aliens aux combats tactiques en apesanteur, chaque titre Flexarion offre une narration émergente où les décisions du joueur forgent le récit — sans compromis, sans microtransactions, avec une passion absolue pour la crédibilité scientifique.</p>
+            <p>
+                <a href="jeux.html" class="btn">Découvrir nos jeux</a>
+                <a href="studio.html" class="btn btn-secondary">Notre histoire</a>
+            </p>
+        </section>
+
+        <!-- ═══════ JEUX PHARES ═══════ -->
+        <section id="jeux-phares">
+            <h2>Nos jeux phares</h2>
+            <p>Cinq expériences vidéoludiques de science-fiction, chacune explorant une facette unique de l'exploration spatiale, de la survie orbitale et de l'ingéniosité humaine face à l'inconnu cosmique.</p>
+            <div class="grid">
+
+                <article class="card game-card">
+                    <span class="status-badge" style="background:var(--success)">Early Access 2026</span>
+                    <span class="genre-tag">Tactical-RPG</span>
+                    <span class="genre-tag">Hard-SF</span>
+                    <span class="genre-tag">Survie</span>
+                    <h3>Anni 2810</h3>
+                    <p>Notre titre phare : un <strong>Tactical-RPG spatial</strong> exigeant où chaque décision tactique engage la survie de tout un équipage. Mécanique céleste réaliste, exploration d'une mégastructure alien générée de manière procédurale, combats au tour par tour en apesanteur et gestion de la santé mentale de vos astronautes dans les profondeurs de la ceinture de Kuiper.</p>
+                    <p><a href="jeux.html#anni-2810">En savoir plus sur Anni 2810 →</a></p>
+                </article>
+
+                <article class="card game-card">
+                    <span class="status-badge" style="background:var(--success)">En développement</span>
+                    <span class="genre-tag">Roguelike</span>
+                    <span class="genre-tag">Exploration</span>
+                    <h3>Nexus Void</h3>
+                    <p><strong>Roguelike spatial d'exploration procédurale</strong> en vue isométrique. Pilotez un vaisseau éclaireur à travers des systèmes stellaires inexplorés, affrontez les anomalies du vide qui déforment la réalité, et percez les secrets d'une archéologie alien millénaire. Chaque run est unique grâce à la permadeath et la méta-progression persistante.</p>
+                    <p><a href="jeux.html#nexus-void">Découvrir Nexus Void →</a></p>
+                </article>
+
+                <article class="card game-card">
+                    <span class="status-badge" style="background:var(--info)">Pré-production</span>
+                    <span class="genre-tag">FPS Tactique</span>
+                    <span class="genre-tag">Coopératif</span>
+                    <h3>Helios Protocol</h3>
+                    <p><strong>FPS tactique coopératif</strong> pour 1 à 4 joueurs dans une station spatiale abandonnée en orbite d'un soleil mourant. Combats en apesanteur, éruptions solaires forçant des évacuations d'urgence, gestion thermique des équipements et extraction de données critiques avant la désintégration orbitale de la station.</p>
+                    <p><a href="jeux.html#helios-protocol">Découvrir Helios Protocol →</a></p>
+                </article>
+
+                <article class="card game-card">
+                    <span class="status-badge" style="background:var(--warning)">Prototype</span>
+                    <span class="genre-tag">Puzzle</span>
+                    <span class="genre-tag">Narratif</span>
+                    <h3>Chronos Drift</h3>
+                    <p><strong>Puzzle narratif temporel</strong> à bord d'un vaisseau générationnel où le temps s'écoule différemment selon les sections. Résolvez des énigmes basées sur la dilatation temporelle, les paradoxes causaux et la manipulation de l'entropie. Les mémoires de l'équipage, étalées sur des siècles, deviennent votre principal outil de compréhension.</p>
+                    <p><a href="jeux.html#chronos-drift">Découvrir Chronos Drift →</a></p>
+                </article>
+
+                <article class="card game-card">
+                    <span class="status-badge" style="background:var(--text-muted)">Concept</span>
+                    <span class="genre-tag">City-Builder</span>
+                    <span class="genre-tag">Simulation</span>
+                    <h3>Stellar Forge</h3>
+                    <p><strong>Simulation de colonie spatiale</strong> sur un astéroïde de la ceinture de Kuiper. Gérez l'extraction de ressources, la logistique orbitale avec de véritables orbites de transfert de Hohmann, la survie des colons et les menaces extérieures — tempêtes de micrométéorites, radiations solaires et factions rivales.</p>
+                    <p><a href="jeux.html#stellar-forge">Découvrir Stellar Forge →</a></p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ═══════ POURQUOI FLEXARION ═══════ -->
+        <section id="pourquoi-flexarion">
+            <h2>Pourquoi Flexarion ?</h2>
+            <p>Quatre piliers fondateurs guident chaque décision créative et technique de notre studio de développement indépendant basé en Provence.</p>
+            <div class="grid">
+                <article class="card">
+                    <h3>🔬 Rigueur Scientifique</h3>
+                    <p>Nos jeux reposent sur de véritables modèles physiques : mécanique céleste newtonienne, intégrateurs symplectiques de Verlet, dynamique des fluides gazeux et transferts radiatifs. Chaque système de jeu est ancré dans la réalité astrophysique pour offrir une expérience <strong>hard science-fiction</strong> sans compromis.</p>
+                </article>
+                <article class="card">
+                    <h3>⚙️ Innovation Technique</h3>
+                    <p>Moteur C++ propriétaire avec pipeline de rendu Vulkan, <strong>génération procédurale</strong> par Wave Function Collapse en 3D, architecture Data-Oriented (ECS) et multithreading lock-free. Nous repoussons les limites techniques pour des performances optimales du PC haut de gamme au Steam Deck.</p>
+                </article>
+                <article class="card">
+                    <h3>📖 Narration Émergente</h3>
+                    <p>Aucun script linéaire : ce sont vos choix tactiques, vos compromis de survie et les événements systémiques qui écrivent le récit de chaque partie. La morale de l'équipage, les pannes en cascade et les découvertes alien forgent une histoire unique à chaque joueur.</p>
+                </article>
+                <article class="card">
+                    <h3>🎮 Studio Indépendant</h3>
+                    <p>Sans éditeur, sans compromis commercial, sans microtransactions. Flexarion est un studio indépendant à taille humaine, animé par la passion de la science-fiction dure et une transparence totale avec sa communauté via nos <a href="devlogs.html">devlogs techniques détaillés</a>.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ═══════ ACTUALITÉS ═══════ -->
+        <section id="actualites">
+            <h2>Dernières actualités</h2>
+            <p>Retrouvez les derniers carnets de bord techniques de notre équipe de développement.</p>
+
+            <article class="card card-stack">
+                <p><small class="text-accent" style="text-transform:uppercase;letter-spacing:0.05em;font-size:0.8rem">Novembre 2026 • Équipe Rendu & Optimisation</small></p>
+                <h3>Devlog #29 : Optimisation Steam Deck et shaders Vulkan</h3>
+                <p>Notre équipe détaille le profiling de la mémoire unifiée de l'APU AMD, la précompilation des pipelines graphiques Vulkan en SPIR-V statique et la compression géométrique 16 bits half-float réduisant la VRAM de 38 % pour un 60 FPS constant à 11 W de TDP.</p>
+            </article>
+
+            <article class="card card-stack">
+                <p><small class="text-accent" style="text-transform:uppercase;letter-spacing:0.05em;font-size:0.8rem">Novembre 2026 • Équipe Simulation & Physique</small></p>
+                <h3>Devlog #28 : Avaries en cascade et cinétique de micrométéorites</h3>
+                <p>Comment un débris de silicate de 2 mm à 40 km/s déclenche une réaction en chaîne dans les sous-systèmes du vaisseau : graphe de dépendances cycliques, surchauffe des calculateurs et dégradation de l'intégrateur orbital.</p>
+            </article>
+
+            <article class="card card-stack">
+                <p><small class="text-accent" style="text-transform:uppercase;letter-spacing:0.05em;font-size:0.8rem">Octobre 2026 • Pôle Audio & Acoustique</small></p>
+                <h3>Devlog #27 : Synthèse granulaire et anomalies gravitationnelles</h3>
+                <p>Notre moteur audio granulaire procédural en C++ fragmente des micro-échantillons de craquements de glace antarctique et de résonances de câbles d'acier pour sonoriser les singularités gravitationnelles de l'Artefact.</p>
+            </article>
+
+            <p class="text-center"><a href="devlogs.html" class="btn btn-secondary">Tous les devlogs →</a></p>
+        </section>
+
+        <!-- ═══════ REJOINDRE ═══════ -->
+        <section id="rejoindre">
+            <h2>Rejoignez l'aventure Flexarion</h2>
+            <p>Suivez le développement de nos jeux de science-fiction, participez aux sessions de tests fermées et échangez avec notre équipe d'Aix-en-Provence. Ajoutez <strong>Anni 2810</strong> à votre liste de souhaits Steam pour être notifié dès le lancement en Early Access, et suivez-nous sur X (Twitter) pour ne manquer aucune annonce, aucun devlog et aucun aperçu exclusif de nos prochains titres.</p>
+            <p><a href="contact.html" class="btn">Nous contacter</a></p>
         </section>
     </main>
 
     <footer>
-        <p>2026 Studio Flexarion - Tous droits réservés. Studio de développement indépendant de science-fiction, Aix-en-Provence.</p>
+        <nav aria-label="Pied de page">
+            <a href="index.html">Accueil</a>
+            <a href="studio.html">Le Studio</a>
+            <a href="jeux.html">Nos Jeux</a>
+            <a href="devlogs.html">Devlogs</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <p>&copy; 2026 Studio Flexarion &mdash; Tous droits réservés. Studio de développement indépendant de jeux vidéo de science-fiction, Aix-en-Provence, France.</p>
     </footer>
 
+    <script>document.querySelector('.menu-toggle').addEventListener('click',function(){this.classList.toggle('active');document.querySelector('nav ul').classList.toggle('nav-open');this.setAttribute('aria-expanded',this.classList.contains('active'))})</script>
 </body>
 </html>
