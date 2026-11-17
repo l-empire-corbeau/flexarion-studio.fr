@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="3bf3efef-8e42-4990-b7cd-e7f1e8b1d31f"></script>
-    <title>Devlogs & Coulisses de Production | Studio Flexarion (Aix-en-Provence)</title>
+    <title>Devlogs Techniques | Studio Flexarion (Aix-en-Provence)</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <meta name="description" content="Consultez les 29 carnets de bord de développement de Flexarion à Aix-en-Provence : moteur C++ Vulkan, physique orbitale newtonienne, algorithmes WFC et conception d'Anni 2810.">
+    <meta name="description" content="Suivez les 29 devlogs de Flexarion à Aix-en-Provence : moteur C++ Vulkan, physique orbitale newtonienne et coulisses techniques d'Anni 2810.">
     <meta name="theme-color" content="#7c3aed">
     <meta property="og:title" content="Devlogs & Coulisses Techniques | Studio Flexarion">
     <meta property="og:description" content="Journal de bord complet du développement d'Anni 2810 par l'équipe Flexarion à Aix-en-Provence : physique de Verlet, shaders Vulkan et génération procédurale.">
@@ -64,7 +64,7 @@
 
     <header>
         <nav aria-label="Navigation principale">
-            <p class="logo"><a href="index.html"><strong>Flexarion</strong></a></p>
+            <p class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="Logo Studio Flexarion" class="logo-icon" width="26" height="26"><strong>Flexarion</strong></a></p>
             <button class="menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -180,6 +180,20 @@
                 <p>Comment sonoriser un trou noir microscopique en rotation ou un champ de torsion temporelle au sein d'une coursive alien ? Les synthétiseurs classiques produisent trop souvent des textures électroniques impersonnelles. Nous voulions que les singularités de l'Artefact inspirent une angoisse minérale et tellurique.</p>
                 <h4>2. Moteurs granulaires procéduraux en C++</h4>
                 <p>Notre moteur audio charge des micro-échantillons de craquements de glace sous-marine de l'Antarctique et de résonances de câbles d'acier sous tension extrême. En fragmentant ces sons en milliers de grains d'une durée de 5 à 25 millisecondes, modulés dynamiquement selon la proximité du joueur avec le puits gravitationnel, l'ambiance sonore se déforme de manière non linéaire. Les basses fréquences s'étirent, la réverbération s'effondre en cône d'aspiration, avertissant auditivement le joueur d'une zone de cisaillement mortelle avant même que ses capteurs visuels ne s'affolent.</p>
+
+                <!-- Démo audio procédurale in-browser -->
+                <div class="audio-widget" aria-label="Écoute de la synthèse sonore de l'Artefact">
+                    <div class="audio-header">
+                        <div>
+                            <strong style="color:#fff;font-size:0.95rem;">Extrait Procédural : Résonance Gravitationnelle de l'Artefact</strong>
+                            <p style="margin:0;font-size:0.8rem;color:var(--text-muted);">Synthèse en temps réel via Web Audio API (simulation de basses fréquences solidiennes en microgravité)</p>
+                        </div>
+                        <button type="button" class="audio-btn" id="playAudioBtn">
+                            <span id="audioIcon">▶</span> <span id="audioBtnText">Écouter l'anomalie</span>
+                        </button>
+                    </div>
+                    <span class="audio-status" id="audioStatus">Prêt à l'écoute &bull; Synthèse temps réel sans fichier lourd externe</span>
+                </div>
             </article>
 
             <!-- DEVLOG #26 -->
@@ -595,6 +609,80 @@
             document.querySelector('nav ul').classList.toggle('nav-open');
             this.setAttribute('aria-expanded', this.classList.contains('active'));
         });
+
+        // Démonstrateur Web Audio API pour la synthèse granulaire du Devlog #27
+        (function() {
+            const btn = document.getElementById('playAudioBtn');
+            const icon = document.getElementById('audioIcon');
+            const text = document.getElementById('audioBtnText');
+            const status = document.getElementById('audioStatus');
+            if (!btn) return;
+
+            let audioCtx = null;
+            let osc = null;
+            let gainNode = null;
+            let filter = null;
+            let isPlaying = false;
+
+            btn.addEventListener('click', function() {
+                if (isPlaying) {
+                    if (gainNode) {
+                        gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.3);
+                        setTimeout(() => {
+                            if (osc) { osc.stop(); osc.disconnect(); }
+                            isPlaying = false;
+                            icon.textContent = '▶';
+                            text.textContent = "Écouter l'anomalie";
+                            status.textContent = 'Lecture arrêtée.';
+                            status.classList.remove('playing');
+                        }, 350);
+                    }
+                } else {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    if (!AudioContext) {
+                        status.textContent = "Votre navigateur ne supporte pas l'API Web Audio.";
+                        return;
+                    }
+                    if (!audioCtx) audioCtx = new AudioContext();
+                    if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                    osc = audioCtx.createOscillator();
+                    gainNode = audioCtx.createGain();
+                    filter = audioCtx.createBiquadFilter();
+
+                    // Fréquence sub-bass simulant la résonance de coque métallique
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(42, audioCtx.currentTime);
+
+                    // Filtre passe-bas résonant pour simuler le confinement de la mégastructure
+                    filter.type = 'lowpass';
+                    filter.frequency.setValueAtTime(140, audioCtx.currentTime);
+                    filter.Q.setValueAtTime(8, audioCtx.currentTime);
+
+                    // Légère modulation LFO
+                    const lfo = audioCtx.createOscillator();
+                    const lfoGain = audioCtx.createGain();
+                    lfo.frequency.setValueAtTime(0.35, audioCtx.currentTime);
+                    lfoGain.gain.setValueAtTime(25, audioCtx.currentTime);
+                    lfo.connect(filter.frequency);
+                    lfo.start();
+
+                    gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.18, audioCtx.currentTime + 1.2);
+
+                    osc.connect(filter);
+                    filter.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+
+                    osc.start();
+                    isPlaying = true;
+                    icon.textContent = '⏹';
+                    text.textContent = "Stopper l'écoute";
+                    status.textContent = "Lecture en cours : résonance sub-bass 42 Hz modulée par filtre résonant.";
+                    status.classList.add('playing');
+                }
+            });
+        })();
     </script>
 </body>
 </html>
