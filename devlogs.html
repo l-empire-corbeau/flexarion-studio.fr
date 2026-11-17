@@ -4,36 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="3bf3efef-8e42-4990-b7cd-e7f1e8b1d31f"></script>
-    <title>Devlogs & Coulisses de Production | Studio Flexarion</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
-    <meta name="description" content="Suivez l'intégralité du journal de bord de développement de Flexarion : physique orbitale, rendu procédural, IA tactique, shaders et coulisses de production d'Anni 2810.">
-    <link rel="stylesheet" href="assets/stylesheets/style.css?v=2">
-    <link rel="canonical" href="https://flexarion-studio.fr/devlogs.html"/>
-    <link rel="alternate" hreflang="fr-fr" href="https://flexarion-studio.fr/devlogs.html"/>
+    <title>Devlogs & Coulisses de Production | Studio Flexarion (Aix-en-Provence)</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <meta name="description" content="Consultez les 29 carnets de bord de développement de Flexarion à Aix-en-Provence : moteur C++ Vulkan, physique orbitale newtonienne, algorithmes WFC et conception d'Anni 2810.">
+    <meta name="theme-color" content="#7c3aed">
+    <meta property="og:title" content="Devlogs & Coulisses Techniques | Studio Flexarion">
+    <meta property="og:description" content="Journal de bord complet du développement d'Anni 2810 par l'équipe Flexarion à Aix-en-Provence : physique de Verlet, shaders Vulkan et génération procédurale.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flexarion-studio.fr/devlogs.html">
+    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
+    <meta property="og:image:alt" content="Moteur de simulation spatiale d'Anni 2810 par Studio Flexarion">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Flexarion">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Devlogs Techniques | Studio Flexarion">
+    <meta name="twitter:description" content="29 articles détaillés sur l'ingénierie logicielle, la physique spatiale et le rendu Vulkan d'Anni 2810 à Aix-en-Provence.">
+    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
+    <script type="application/ld+json">
+    [
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Devlogs & Carnets de Bord — Studio Flexarion",
+        "description": "Archives techniques de développement, architecture moteur C++, rendu Vulkan et game design du studio Flexarion à Aix-en-Provence.",
+        "url": "https://flexarion-studio.fr/devlogs.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Flexarion",
+            "url": "https://flexarion-studio.fr",
+            "logo": "https://flexarion-studio.fr/assets/images/favicon.png"
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://flexarion-studio.fr/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Devlogs",
+                "item": "https://flexarion-studio.fr/devlogs.html"
+            }
+        ]
+    }
+    ]
+    </script>
+    <link rel="stylesheet" href="assets/stylesheets/style.css?v=3">
+    <link rel="canonical" href="https://flexarion-studio.fr/devlogs.html">
+    <link rel="alternate" hreflang="fr-fr" href="https://flexarion-studio.fr/devlogs.html">
 </head>
 
 <body>
 
     <header>
-        <nav>
+        <nav aria-label="Navigation principale">
             <p class="logo"><a href="index.html"><strong>Flexarion</strong></a></p>
+            <button class="menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="studio.html">Le Studio</a></li>
-                <li><a href="jeux.html">Jeux</a></li>
-                <li><a href="devlogs.html">Devlogs</a></li>
+                <li><a href="anni-2810.html">Anni 2810</a></li>
+                <li><a href="jeux.html">Catalogue</a></li>
+                <li><a href="devlogs.html" aria-current="page">Devlogs</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- Fil d'Ariane pour le référencement naturel et le maillage en silo -->
+        <nav class="breadcrumbs" aria-label="Fil d'Ariane">
+            <ol>
+                <li><a href="index.html">Accueil</a></li>
+                <li aria-current="page">Devlogs</li>
+            </ol>
+        </nav>
+
         <section id="devlogs">
-            <h2>Carnets de Bord & Devlogs Techniques</h2>
-            <p>Retrouvez l'intégralité des archives de production, les choix d'architecture logicielle, les benchmarks graphiques et les réflexions de conception menées par l'équipe de <a href="studio.html">notre studio à Aix-en-Provence</a> sur notre Tactical-RPG Hard-SF <a href="jeux.html">Anni 2810</a>.</p>
+            <p class="tagline">Archives Techniques · Moteur C++ & Vulkan · R&D Provençale</p>
+            <h1>Carnets de Bord & Devlogs Techniques | Studio Flexarion</h1>
+            <p>Retrouvez l'intégralité des archives de production, les choix d'architecture logicielle, les benchmarks graphiques et les réflexions de conception menées par l'équipe de <a href="studio.html">notre studio à Aix-en-Provence</a> sur notre Tactical-RPG Hard-SF <a href="anni-2810.html"><strong>Anni 2810</strong></a>.</p>
+
+            <!-- Sommaire thématique pour améliorer la navigation interne et le netlinking -->
+            <div class="toc" aria-label="Sommaire thématique des devlogs">
+                <h3>📑 Index Thématique des 29 Carnets de Bord</h3>
+                <div class="toc-grid">
+                    <div class="toc-category">
+                        <h4>🚀 Physique Orbitale & Balistique</h4>
+                        <ul>
+                            <li><a href="#devlog-28">#28 Avaries & micrométéorites</a></li>
+                            <li><a href="#devlog-25">#25 Balistique ionique</a></li>
+                            <li><a href="#devlog-18">#18 Propulseurs à effet Hall</a></li>
+                            <li><a href="#devlog-11">#11 Contraintes de carlingue</a></li>
+                            <li><a href="#devlog-9">#9 Dépressurisation dynamique</a></li>
+                            <li><a href="#devlog-3">#3 Trajectoires & intégrateur Verlet</a></li>
+                        </ul>
+                    </div>
+                    <div class="toc-category">
+                        <h4>⚙️ Moteur C++, Vulkan & Rendu</h4>
+                        <ul>
+                            <li><a href="#devlog-29">#29 Optimisation Steam Deck & Vulkan</a></li>
+                            <li><a href="#devlog-24">#24 Éclairage volumétrique & froxels</a></li>
+                            <li><a href="#devlog-22">#22 Architecture Data-Oriented (ECS)</a></li>
+                            <li><a href="#devlog-14">#14 Tampon logarithmique Z-Buffer</a></li>
+                            <li><a href="#devlog-13">#13 Multithreading sans verrou</a></li>
+                            <li><a href="#devlog-7">#7 Voxel Cone Tracing</a></li>
+                        </ul>
+                    </div>
+                    <div class="toc-category">
+                        <h4>🌌 Algorithmes & Procédural</h4>
+                        <ul>
+                            <li><a href="#devlog-26">#26 Wave Function Collapse 3D</a></li>
+                            <li><a href="#devlog-20">#20 Découpe dynamique de maillage</a></li>
+                            <li><a href="#devlog-17">#17 Locomotion inverse FABRIK</a></li>
+                            <li><a href="#devlog-4">#4 Sauvegardes LZ4 déterministes</a></li>
+                        </ul>
+                    </div>
+                    <div class="toc-category">
+                        <h4>🧠 Gameplay, IA & Direction Artistique</h4>
+                        <ul>
+                            <li><a href="#devlog-27">#27 Synthèse sonore granulaire</a></li>
+                            <li><a href="#devlog-23">#23 Support de vie ECLSS</a></li>
+                            <li><a href="#devlog-21">#21 HUD diégétique spatial</a></li>
+                            <li><a href="#devlog-8">#8 IA & Behavior Trees des drones</a></li>
+                            <li><a href="#devlog-6">#6 Modélisation du stress d'équipage</a></li>
+                            <li><a href="#devlog-1">#1 Genèse du studio à Aix</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <!-- DEVLOG #29 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-29">
                 <header>
                     <h3>Devlog #29 : Optimisation Steam Deck, profiling de la mémoire unifiée et shaders Vulkan</h3>
                     <p><small>Publié en novembre 2026 • Par l'équipe Rendu & Optimisation Bas-Niveau</small></p>
@@ -45,7 +153,7 @@
             </article>
 
             <!-- DEVLOG #28 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-28">
                 <header>
                     <h3>Devlog #28 : Modélisation des avaries en cascade et cinétique d'impact des micrométéorites</h3>
                     <p><small>Publié en novembre 2026 • Par l'équipe Simulation & Physique</small></p>
@@ -63,7 +171,7 @@
             </article>
 
             <!-- DEVLOG #27 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-27">
                 <header>
                     <h3>Devlog #27 : La synthèse granulaire au cœur des anomalies gravitationnelles de l'Artefact</h3>
                     <p><small>Publié en octobre 2026 • Par le pôle Audio & Acoustique</small></p>
@@ -75,7 +183,7 @@
             </article>
 
             <!-- DEVLOG #26 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-26">
                 <header>
                     <h3>Devlog #26 : Génération procédurale d'intérieurs modulaires par Wave Function Collapse (WFC)</h3>
                     <p><small>Publié en octobre 2026 • Par l'équipe Génération Procédurale & Level Design</small></p>
@@ -87,7 +195,7 @@
             </article>
 
             <!-- DEVLOG #25 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-25">
                 <header>
                     <h3>Devlog #25 : Balistique ionique et équations de transfert radiatif dans le vide</h3>
                     <p><small>Publié en septembre 2026 • Par le pôle Balistique & Combat Tactique</small></p>
@@ -99,7 +207,7 @@
             </article>
 
             <!-- DEVLOG #24 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-24">
                 <header>
                     <h3>Devlog #24 : Éclairage volumétrique adaptatif et diffusion Rayleigh pour brouillards froids</h3>
                     <p><small>Publié en septembre 2026 • Par l'équipe Moteur Graphique</small></p>
@@ -111,7 +219,7 @@
             </article>
 
             <!-- DEVLOG #23 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-23">
                 <header>
                     <h3>Devlog #23 : Économie de circuit fermé et équilibre thermodynamique du support de vie</h3>
                     <p><small>Publié en août 2026 • Par la cellule Game Design & Économie de Survie</small></p>
@@ -129,7 +237,7 @@
             </article>
 
             <!-- DEVLOG #22 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-22">
                 <header>
                     <h3>Devlog #22 : Déploiement d'une architecture Data-Oriented (DOD) et ECS pour la physique spatiale</h3>
                     <p><small>Publié en août 2026 • Par l'équipe Core Engine & Architecture C++</small></p>
@@ -141,7 +249,7 @@
             </article>
 
             <!-- DEVLOG #21 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-21">
                 <header>
                     <h3>Devlog #21 : L'art du HUD diégétique : intégration physique des compteurs sur les combinaisons EVA</h3>
                     <p><small>Publié en juillet 2026 • Par le pôle Interface Utilisateur (UI/UX)</small></p>
@@ -153,7 +261,7 @@
             </article>
 
             <!-- DEVLOG #20 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-20">
                 <header>
                     <h3>Devlog #20 : Système de déchirement de maillage en temps réel pour coques sous contrainte</h3>
                     <p><small>Publié en juillet 2026 • Par l'équipe R&D Graphique</small></p>
@@ -165,7 +273,7 @@
             </article>
 
             <!-- DEVLOG #19 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-19">
                 <header>
                     <h3>Devlog #19 : Radiations cosmiques, inversion de bits (bit-flips) et pannes logicielles diégétiques</h3>
                     <p><small>Publié en juin 2026 • Par l'équipe Gameplay Systémique</small></p>
@@ -182,7 +290,7 @@
             </article>
 
             <!-- DEVLOG #18 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-18">
                 <header>
                     <h3>Devlog #18 : Modélisation des propulseurs à effet Hall et dissipation thermique infrarouge</h3>
                     <p><small>Publié en juin 2026 • Par le pôle Physique & Simulation Spatiale</small></p>
@@ -194,7 +302,7 @@
             </article>
 
             <!-- DEVLOG #17 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-17">
                 <header>
                     <h3>Devlog #17 : Cinématique inverse et locomotion procédurale en gravité zéro</h3>
                     <p><small>Publié en mai 2026 • Par l'équipe Animation & Personnages</small></p>
@@ -206,7 +314,7 @@
             </article>
 
             <!-- DEVLOG #16 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-16">
                 <header>
                     <h3>Devlog #16 : Pipeline de textures PBR nanométriques et photométrie des alliages métalliques</h3>
                     <p><small>Publié en mai 2026 • Par le pôle Art & Texturing</small></p>
@@ -218,7 +326,7 @@
             </article>
 
             <!-- DEVLOG #15 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-15">
                 <header>
                     <h3>Devlog #15 : Arbre technologique de rétro-ingénierie et recherche sur les alliages aliens</h3>
                     <p><small>Publié en avril 2026 • Par la cellule Game Design & Équilibrage</small></p>
@@ -236,7 +344,7 @@
             </article>
 
             <!-- DEVLOG #14 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-14">
                 <header>
                     <h3>Devlog #14 : Système de caméra cinématique orbitale et rendu de la courbure de la Terre et des lunes</h3>
                     <p><small>Publié en avril 2026 • Par l'équipe Rendu & Visuels</small></p>
@@ -248,7 +356,7 @@
             </article>
 
             <!-- DEVLOG #13 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-13">
                 <header>
                     <h3>Devlog #13 : Programmation concurrente et parallélisme sans verrou (Lock-Free) pour le moteur de ticks</h3>
                     <p><small>Publié en mars 2026 • Par l'équipe Bas-Niveau & Performance</small></p>
@@ -260,7 +368,7 @@
             </article>
 
             <!-- DEVLOG #12 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-12">
                 <header>
                     <h3>Devlog #12 : Simulation des communications par paquets radio et latence relativiste</h3>
                     <p><small>Publié en mars 2026 • Par le pôle Réseau & Narration Systémique</small></p>
@@ -272,7 +380,7 @@
             </article>
 
             <!-- DEVLOG #11 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-11">
                 <header>
                     <h3>Devlog #11 : Tenseurs de contrainte mécanique et déformations élastiques des châssis modulaires</h3>
                     <p><small>Publié en février 2026 • Par l'équipe Simulation Mécanique</small></p>
@@ -284,7 +392,7 @@
             </article>
 
             <!-- DEVLOG #10 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-10">
                 <header>
                     <h3>Devlog #10 : Élaboration de la palette chromatique d'Anni 2810 : obscurité et lueurs ioniques</h3>
                     <p><small>Publié en janvier 2026 • Par la Direction Artistique</small></p>
@@ -302,7 +410,7 @@
             </article>
 
             <!-- DEVLOG #9 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-9">
                 <header>
                     <h3>Devlog #9 : Simulation de la dépressurisation explosive et dynamique des fluides gazeux</h3>
                     <p><small>Publié en novembre 2026 • Par l'équipe moteur & physique Flexarion</small></p>
@@ -320,7 +428,7 @@
             </article>
 
             <!-- DEVLOG #8 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-8">
                 <header>
                     <h3>Devlog #8 : Arbres de comportement (Behavior Trees) et IA tactique des nuées de drones aliens</h3>
                     <p><small>Publié en octobre 2026 • Par le pôle Gameplay & Intelligence Artificielle</small></p>
@@ -340,7 +448,7 @@
             </article>
 
             <!-- DEVLOG #7 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-7">
                 <header>
                     <h3>Devlog #7 : Raymarching, Voxel Cone Tracing et illumination globale des coursives dépressurisées</h3>
                     <p><small>Publié en septembre 2026 • Par l'équipe Rendu & Shaders</small></p>
@@ -360,7 +468,7 @@
             </article>
 
             <!-- DEVLOG #6 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-6">
                 <header>
                     <h3>Devlog #6 : Santé psychologique, claustrophobie et stress d'équipage : l'algorithme sous le capot</h3>
                     <p><small>Publié en août 2026 • Par la cellule Game Design & Écriture Narrative</small></p>
@@ -380,7 +488,7 @@
             </article>
 
             <!-- DEVLOG #5 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-5">
                 <header>
                     <h3>Devlog #5 : De la CAO spatiale aux polygones : conception des modules de l'Explorateur Anni</h3>
                     <p><small>Publié en juillet 2026 • Par le département Conception Artistique & 3D</small></p>
@@ -394,7 +502,7 @@
             </article>
 
             <!-- DEVLOG #4 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-4">
                 <header>
                     <h3>Devlog #4 : Architecture réseau et sérialisation binaire pour sauvegardes déterministes</h3>
                     <p><small>Publié en mai 2026 • Par l'équipe Core Engine</small></p>
@@ -408,7 +516,7 @@
             </article>
 
             <!-- DEVLOG #3 : GRAND DEVLOG TECHNIQUE -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-3">
                 <header>
                     <h3>Devlog #3 : Modélisation des trajectoires orbitales et inertie gravitationnelle réaliste</h3>
                     <p><small>Publié en mars 2026 • Par l'équipe de développement Flexarion</small></p>
@@ -434,7 +542,7 @@
             </article>
 
             <!-- DEVLOG #2 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-2">
                 <header>
                     <h3>Devlog #2 : Simulation acoustique et propagation du son dans le vide spatial</h3>
                     <p><small>Publié en janvier 2026 • Par l'équipe sonore Flexarion</small></p>
@@ -448,7 +556,7 @@
             </article>
 
             <!-- DEVLOG #1 -->
-            <article class="card card-stack">
+            <article class="card card-stack" id="devlog-1">
                 <header>
                     <h3>Devlog #1 : Genèse d'un studio de développement indépendant à Aix-en-Provence</h3>
                     <p><small>Publié en 2025 • Par l'équipe fondatrice Flexarion</small></p>
@@ -469,8 +577,24 @@
     </main>
 
     <footer>
-        <p>2026 Studio Flexarion - Tous droits réservés. Studio de développement indépendant de science-fiction, Aix-en-Provence.</p>
+        <nav aria-label="Pied de page">
+            <a href="index.html">Accueil</a>
+            <a href="studio.html">Le Studio</a>
+            <a href="anni-2810.html">Anni 2810</a>
+            <a href="jeux.html">Catalogue</a>
+            <a href="devlogs.html">Devlogs</a>
+            <a href="contact.html">Contact</a>
+            <a href="mentions-legales.html">Mentions Légales</a>
+        </nav>
+        <p>&copy; 2026 Studio Flexarion &mdash; Tous droits réservés. Studio de développement indépendant de jeux vidéo de science-fiction, Aix-en-Provence, France.</p>
     </footer>
 
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('nav ul').classList.toggle('nav-open');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+        });
+    </script>
 </body>
 </html>

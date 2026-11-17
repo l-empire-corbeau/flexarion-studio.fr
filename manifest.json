@@ -1,0 +1,17 @@
+{
+  "name": "Flexarion Studio",
+  "short_name": "Flexarion",
+  "description": "Studio indépendant de jeux vidéo de science-fiction basé à Aix-en-Provence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0c10",
+  "theme_color": "#7c3aed",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}

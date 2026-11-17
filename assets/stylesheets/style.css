@@ -344,3 +344,271 @@ code {
 ::-webkit-scrollbar-track { background: var(--bg-dark); }
 ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ---- Breadcrumbs (Fil d'Ariane) ---- */
+.breadcrumbs {
+    padding: 1.25rem 0 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+    align-items: center;
+}
+.breadcrumbs li {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    color: var(--border-color);
+    font-weight: 300;
+}
+.breadcrumbs a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.breadcrumbs a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+.breadcrumbs [aria-current="page"] {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* ---- Formulaires (Contact & Presse) ---- */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+.form-group label .required {
+    color: #ef4444;
+}
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #0d1017;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+.form-help {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.35rem;
+}
+
+/* ---- Timeline Historique ---- */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: 2rem 0;
+    border-left: 2px solid var(--border-color);
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+.timeline-marker {
+    position: absolute;
+    left: -2.6rem;
+    top: 0.25rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    border: 3px solid var(--bg-dark);
+    box-shadow: 0 0 0 2px var(--accent);
+}
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+/* ---- Équipe / Team ---- */
+.team-role {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+.team-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+}
+.team-specialties span {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: 4px;
+    color: var(--text-main);
+}
+
+/* ---- Tableaux Spécifications ---- */
+.table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+}
+th, td {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+th {
+    background-color: #0f131a;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+tr:hover td {
+    background-color: rgba(124, 58, 237, 0.03);
+}
+
+/* ---- Sommaire Devlogs (TOC) ---- */
+.toc {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.toc h3 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+.toc-category {
+    font-size: 0.9rem;
+}
+.toc-category h4 {
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin: 0 0 0.5rem;
+}
+.toc-category ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.toc-category li {
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
+}
+.toc-category a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+.toc-category a:hover {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+
+/* ---- Press Kit Box ---- */
+.press-kit-box {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(18, 22, 31, 1) 100%);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.press-kit-box h3 {
+    color: #fff;
+    margin-top: 0;
+}
+.press-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+.press-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    color: var(--text-main);
+    text-decoration: none;
+}
+.press-badge:hover {
+    border-color: var(--accent);
+    color: #fff;
+}
+

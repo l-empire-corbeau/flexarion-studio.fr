@@ -7,6 +7,8 @@
     <title>Flexarion | Studio Indépendant de Jeux Vidéo Science-Fiction | Aix-en-Provence</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta name="description" content="Flexarion est un studio indépendant de jeux vidéo de science-fiction basé à Aix-en-Provence. Découvrez Anni 2810, Nexus Void, Helios Protocol et nos autres jeux Hard-SF.">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="manifest" href="manifest.json">
     <meta property="og:title" content="Flexarion | Studio Indépendant de Jeux Vidéo Science-Fiction">
     <meta property="og:description" content="Studio indépendant français créant des jeux vidéo de science-fiction immersifs avec physique réaliste et génération procédurale.">
     <meta property="og:type" content="website">
@@ -23,11 +25,13 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Flexarion",
+        "alternateName": ["Studio Flexarion", "Flexarion Studio"],
         "url": "https://flexarion-studio.fr",
         "logo": "https://flexarion-studio.fr/assets/images/favicon.png",
         "description": "Studio indépendant de jeux vidéo de science-fiction basé à Aix-en-Provence, France.",
         "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Technopôle de l'Arbois, Avenue Louis Philibert",
             "addressLocality": "Aix-en-Provence",
             "postalCode": "13100",
             "addressCountry": "FR"
@@ -55,11 +59,41 @@
         "@type": "ItemList",
         "name": "Jeux Flexarion",
         "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Anni 2810", "url": "https://flexarion-studio.fr/jeux.html#anni-2810"},
+            {"@type": "ListItem", "position": 1, "name": "Anni 2810", "url": "https://flexarion-studio.fr/anni-2810.html"},
             {"@type": "ListItem", "position": 2, "name": "Nexus Void", "url": "https://flexarion-studio.fr/jeux.html#nexus-void"},
             {"@type": "ListItem", "position": 3, "name": "Helios Protocol", "url": "https://flexarion-studio.fr/jeux.html#helios-protocol"},
             {"@type": "ListItem", "position": 4, "name": "Chronos Drift", "url": "https://flexarion-studio.fr/jeux.html#chronos-drift"},
             {"@type": "ListItem", "position": 5, "name": "Stellar Forge", "url": "https://flexarion-studio.fr/jeux.html#stellar-forge"}
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Qu'est-ce que le studio Flexarion ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Flexarion est un studio indépendant de développement de jeux vidéo spécialisé dans la science-fiction et la physique spatiale réaliste, fondé et basé à Aix-en-Provence en France."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quel est le jeu phare développé par Flexarion ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le jeu phare de Flexarion est Anni 2810, un Tactical-RPG spatial de hard science-fiction avec modélisation newtonienne des trajectoires, exploration procédurale de mégastructures et survie d'équipage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Où est localisé le studio Flexarion ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le Studio Flexarion est implanté à Aix-en-Provence (13100), dans la région Provence-Alpes-Côte d'Azur, à proximité du Technopôle de l'Arbois."
+                }
+            }
         ]
     }]
     </script>
@@ -70,13 +104,14 @@
 <body>
 
     <header>
-        <nav>
+        <nav aria-label="Navigation principale">
             <p class="logo"><a href="index.html"><strong>Flexarion</strong></a></p>
-            <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            <button class="menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" aria-current="page">Accueil</a></li>
                 <li><a href="studio.html">Le Studio</a></li>
-                <li><a href="jeux.html">Nos Jeux</a></li>
+                <li><a href="anni-2810.html">Anni 2810</a></li>
+                <li><a href="jeux.html">Catalogue</a></li>
                 <li><a href="devlogs.html">Devlogs</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -87,11 +122,12 @@
         <!-- ═══════ HERO ═══════ -->
         <section id="accueil">
             <p class="tagline">Studio de jeux vidéo indépendant · Aix-en-Provence</p>
-            <h1>Créateurs d'univers de science-fiction immersifs</h1>
+            <h1>Flexarion : Studio Indépendant de Jeux Vidéo de Science-Fiction à Aix-en-Provence</h1>
             <p>Fondé au cœur d'<strong>Aix-en-Provence</strong>, le studio <strong>Flexarion</strong> conçoit des jeux vidéo de <strong>science-fiction</strong> exigeants qui placent la rigueur scientifique au centre de chaque expérience. Notre équipe de développeurs passionnés d'astrophysique et de hard science-fiction repousse les frontières du jeu vidéo indépendant français avec un moteur C++ propriétaire, une physique orbitale réaliste basée sur les équations newtoniennes, et des systèmes de <strong>génération procédurale</strong> avancés. De l'exploration de mégastructures aliens aux combats tactiques en apesanteur, chaque titre Flexarion offre une narration émergente où les décisions du joueur forgent le récit — sans compromis, sans microtransactions, avec une passion absolue pour la crédibilité scientifique.</p>
             <p>
-                <a href="jeux.html" class="btn">Découvrir nos jeux</a>
-                <a href="studio.html" class="btn btn-secondary">Notre histoire</a>
+                <a href="anni-2810.html" class="btn">Découvrir Anni 2810 (Jeu Phare)</a>
+                <a href="jeux.html" class="btn btn-secondary">Catalogue complet</a>
+                <a href="studio.html" class="btn btn-secondary">Le Studio</a>
             </p>
         </section>
 
@@ -108,7 +144,7 @@
                     <span class="genre-tag">Survie</span>
                     <h3>Anni 2810</h3>
                     <p>Notre titre phare : un <strong>Tactical-RPG spatial</strong> exigeant où chaque décision tactique engage la survie de tout un équipage. Mécanique céleste réaliste, exploration d'une mégastructure alien générée de manière procédurale, combats au tour par tour en apesanteur et gestion de la santé mentale de vos astronautes dans les profondeurs de la ceinture de Kuiper.</p>
-                    <p><a href="jeux.html#anni-2810">En savoir plus sur Anni 2810 →</a></p>
+                    <p><a href="anni-2810.html" style="font-weight:600;">Consulter la page dédiée d'Anni 2810 →</a></p>
                 </article>
 
                 <article class="card game-card">
@@ -200,11 +236,44 @@
             <p class="text-center"><a href="devlogs.html" class="btn btn-secondary">Tous les devlogs →</a></p>
         </section>
 
+        <!-- ═══════ FAQ STUDIO FLEXARION ═══════ -->
+        <section id="faq-flexarion">
+            <h2>Foire Aux Questions sur le Studio Flexarion</h2>
+            
+            <details class="faq-item">
+                <summary>Qu'est-ce que le Studio Flexarion ?</summary>
+                <div class="faq-content">
+                    <p><strong>Flexarion</strong> est un studio indépendant de développement de jeux vidéo spécialisé dans la hard science-fiction et les simulations spatiales exigeantes. Fondé par une équipe de développeurs et passionnés d'astrophysique, le studio conçoit ses propres moteurs technologiques pour offrir des expériences de jeu ancrées dans les véritables lois de la physique.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Où se situe le Studio Flexarion en France ?</summary>
+                <div class="faq-content">
+                    <p>Le studio est basé à <strong>Aix-en-Provence</strong> (13100), dans le sud de la France, au sein de la technopole d'Aix-Marseille. Pour toute rencontre ou demande presse, consultez notre <a href="contact.html">page contact et espace presse</a>.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Quel est le titre phare développé par Flexarion ?</summary>
+                <div class="faq-content">
+                    <p>Notre titre phare est <strong><a href="anni-2810.html">Anni 2810</a></strong>, un Tactical-RPG spatial de hard science-fiction dont le lancement en Steam Early Access est prévu pour fin 2026. Retrouvez tous les détails sur la <a href="anni-2810.html">page dédiée à Anni 2810</a> et l'ensemble de nos projets dans notre <a href="jeux.html">catalogue de jeux</a>.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Comment suivre les avancées de développement du studio ?</summary>
+                <div class="faq-content">
+                    <p>Notre équipe publie régulièrement des retours techniques approfondis dans nos <a href="devlogs.html">29 carnets de bord (devlogs)</a> et partage ses annonces officielles sur son compte X (Twitter) <a href="https://twitter.com/FlexarionStudio" target="_blank" rel="noopener">@FlexarionStudio</a>.</p>
+                </div>
+            </details>
+        </section>
+
         <!-- ═══════ REJOINDRE ═══════ -->
         <section id="rejoindre">
             <h2>Rejoignez l'aventure Flexarion</h2>
             <p>Suivez le développement de nos jeux de science-fiction, participez aux sessions de tests fermées et échangez avec notre équipe d'Aix-en-Provence. Ajoutez <strong>Anni 2810</strong> à votre liste de souhaits Steam pour être notifié dès le lancement en Early Access, et suivez-nous sur X (Twitter) pour ne manquer aucune annonce, aucun devlog et aucun aperçu exclusif de nos prochains titres.</p>
-            <p><a href="contact.html" class="btn">Nous contacter</a></p>
+            <p><a href="contact.html" class="btn">Nous contacter & Espace Presse</a></p>
         </section>
     </main>
 
@@ -212,9 +281,11 @@
         <nav aria-label="Pied de page">
             <a href="index.html">Accueil</a>
             <a href="studio.html">Le Studio</a>
-            <a href="jeux.html">Nos Jeux</a>
+            <a href="anni-2810.html">Anni 2810</a>
+            <a href="jeux.html">Catalogue</a>
             <a href="devlogs.html">Devlogs</a>
             <a href="contact.html">Contact</a>
+            <a href="mentions-legales.html">Mentions Légales</a>
         </nav>
         <p>&copy; 2026 Studio Flexarion &mdash; Tous droits réservés. Studio de développement indépendant de jeux vidéo de science-fiction, Aix-en-Provence, France.</p>
     </footer>
