@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%" fill="none" role="img" aria-label="Logo Studio Flexarion">
+  <defs>
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Anneau orbital externe incliné -->
+  <ellipse cx="80" cy="80" rx="68" ry="24" transform="rotate(-30 80 80)" stroke="url(#orbitGrad)" stroke-width="3" opacity="0.85" filter="url(#glow)"/>
+  
+  <!-- Anneau orbital interne -->
+  <ellipse cx="80" cy="80" rx="52" ry="16" transform="rotate(25 80 80)" stroke="#60a5fa" stroke-width="1.8" opacity="0.6" stroke-dasharray="8 4"/>
+
+  <!-- Satellite / station en orbite -->
+  <circle cx="132" cy="50" r="3.5" fill="#38bdf8" filter="url(#glow)"/>
+  <circle cx="28" cy="110" r="2.5" fill="#c084fc"/>
+
+  <!-- Cœur planétaire / Singularity core -->
+  <circle cx="80" cy="80" r="26" fill="url(#coreGrad)"/>
+  
+  <!-- Ombre portée pour effet 3D sphérique -->
+  <path d="M 80,54 A 26,26 0 0,1 106,80 A 26,26 0 0,1 80,106 A 20,26 0 0,0 80,54 Z" fill="#4c1d95" opacity="0.55"/>
+  
+  <!-- Réticule optique / visée scientifique -->
+  <line x1="80" y1="46" x2="80" y2="52" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="80" y1="108" x2="80" y2="114" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="46" y1="80" x2="52" y2="80" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="108" y1="80" x2="114" y2="80" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

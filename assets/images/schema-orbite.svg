@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" fill="none" role="img" aria-label="Schéma orbital de l'Explorateur Anni autour de la mégastructure l'Artefact">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090e"/>
+      <stop offset="100%" stop-color="#101522"/>
+    </linearGradient>
+    <radialGradient id="artefactGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#6d28d9" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0a0c10" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="thrustGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fond spatial avec grille télémétrique -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <g stroke="#1e293b" stroke-width="0.75" opacity="0.6">
+    <line x1="0" y1="75" x2="800" y2="75"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="225" x2="800" y2="225"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Halo d'anomalie gravitationnelle de l'Artefact -->
+  <circle cx="480" cy="225" r="160" fill="url(#artefactGlow)"/>
+
+  <!-- Puits de gravité / Cercles équipotentiels -->
+  <ellipse cx="480" cy="225" rx="130" ry="110" stroke="#7c3aed" stroke-width="1" stroke-dasharray="4 6" opacity="0.5"/>
+  <ellipse cx="480" cy="225" rx="90" ry="75" stroke="#a855f7" stroke-width="1.2" stroke-dasharray="6 4" opacity="0.7"/>
+
+  <!-- L'Artefact (Mégastructure alien) -->
+  <polygon points="480,185 520,205 520,245 480,265 440,245 440,205" fill="#1e1b4b" stroke="#c084fc" stroke-width="2.5"/>
+  <circle cx="480" cy="225" r="12" fill="#7c3aed"/>
+  <circle cx="480" cy="225" r="4" fill="#ffffff"/>
+  <text x="480" y="295" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0" text-anchor="middle">L'ARTEFACT (MÉGASTRUCTURE ALIEN)</text>
+  <text x="480" y="315" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Diamètre : 82.4 km | Puits Gravitationnel : 1.42 G</text>
+
+  <!-- Trajectoire orbitale de l'Explorateur Anni (Intégrateur de Verlet d'ordre 4) -->
+  <path d="M 90,80 C 180,140 280,280 410,310 C 530,340 640,260 620,160 C 600,70 470,80 390,130 C 330,170 320,230 350,260" 
+        stroke="url(#thrustGrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Vecteurs de poussée & points de manœuvre (Impulsion Delta-V) -->
+  <g transform="translate(410,310)">
+    <circle cx="0" cy="0" r="5" fill="#38bdf8"/>
+    <line x1="0" y1="0" x2="35" y2="15" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <polygon points="38,16 30,11 32,20" fill="#38bdf8"/>
+    <text x="-15" y="25" font-family="monospace" font-size="10" fill="#38bdf8">&Delta;V Manœuvre de Hohmann (-380 m/s)</text>
+  </g>
+
+  <!-- L'Explorateur Anni (Vaisseau joueur) -->
+  <g transform="translate(620,160)">
+    <polygon points="0,-12 16,8 -16,8" fill="#ffffff" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#38bdf8"/>
+    <line x1="0" y1="8" x2="0" y2="18" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+    <text x="25" y="-5" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#38bdf8">Explorateur Anni</text>
+    <text x="25" y="12" font-family="monospace" font-size="10" fill="#94a3b8">Vitesse orbitale : 18.2 km/s</text>
+  </g>
+
+  <!-- Cartouche télémétrique en haut à gauche -->
+  <rect x="25" y="25" width="280" height="90" rx="6" fill="#0d1117" stroke="#334155" stroke-width="1"/>
+  <text x="40" y="48" font-family="monospace" font-size="12" font-weight="bold" fill="#a855f7">TÉLÉMÉTRIE ORBITALE &bull; MOTEUR C++</text>
+  <text x="40" y="68" font-family="monospace" font-size="11" fill="#cbd5e1">Algorithme : Verlet Symplectique Ordre 4</text>
+  <text x="40" y="85" font-family="monospace" font-size="11" fill="#cbd5e1">Fréquence de tick : 120 Hz Contigu SoA</text>
+  <text x="40" y="102" font-family="monospace" font-size="11" fill="#38bdf8">Conservation d'énergie : &plusmn; 0.00012%</text>
+
+  <!-- Repères d'échelle et coordonnées -->
+  <text x="770" y="430" font-family="monospace" font-size="10" fill="#64748b" text-anchor="end">FLEXARION STUDIO &bull; SIMULATION SPATIALE &bull; AIX-EN-PROVENCE</text>
+</svg>
