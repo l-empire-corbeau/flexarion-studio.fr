@@ -4,8 +4,8 @@
   "description": "Studio indépendant de jeux vidéo de science-fiction basé à Aix-en-Provence.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0c10",
-  "theme_color": "#7c3aed",
+  "background_color": "#090b0e",
+  "theme_color": "#6d28d9",
   "lang": "fr",
   "icons": [
     {

@@ -7,17 +7,19 @@
     <title>Jeux Vidéo Flexarion | Catalogue Hard Science-Fiction</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta name="description" content="Catalogue des jeux de science-fiction du Studio Flexarion à Aix-en-Provence : Anni 2810, Nexus Void, Helios Protocol, Chronos Drift et Stellar Forge.">
+    <meta name="theme-color" content="#6d28d9">
+    <link rel="manifest" href="manifest.json">
     <meta property="og:title" content="Nos Jeux | Flexarion Studio — Jeux Vidéo Science-Fiction">
     <meta property="og:description" content="Catalogue complet des jeux de science-fiction Flexarion : Tactical-RPG, roguelike spatial, FPS coopératif, puzzle temporel et city-builder.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://flexarion-studio.fr/jeux.html">
-    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
+    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/screenshot.svg">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Flexarion">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Nos Jeux | Flexarion Studio">
     <meta name="twitter:description" content="Jeux vidéo de science-fiction indépendants : Anni 2810, Nexus Void, Helios Protocol, Chronos Drift, Stellar Forge.">
-    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
+    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/screenshot.svg">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -94,7 +96,7 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="assets/stylesheets/style.css?v=3">
+    <link rel="preload" href="assets/stylesheets/style.css?v=4" as="style"><link rel="stylesheet" href="assets/stylesheets/style.css?v=4">
     <link rel="canonical" href="https://flexarion-studio.fr/jeux.html">
     <link rel="alternate" hreflang="fr-fr" href="https://flexarion-studio.fr/jeux.html">
 </head>
@@ -134,13 +136,13 @@
              ANNI 2810 — FLAGSHIP
              ══════════════════════════════════════════════════════════ -->
         <section id="anni-2810">
-            <p class="tagline" style="color:var(--success)">Titre Phare du Studio Flexarion</p>
+            <p class="tagline">Titre Phare du Studio Flexarion</p>
             <h2>Anni 2810 — Tactical-RPG Hard Science-Fiction</h2>
             <p>
                 <span class="genre-tag">Tactical-RPG</span>
                 <span class="genre-tag">Hard Science-Fiction</span>
                 <span class="genre-tag">Simulation de Survie</span>
-                <span class="status-badge" style="background:var(--success);position:static">Early Access — Fin 2026</span>
+                <span class="status-badge status-active" style="position:static">Early Access — Fin 2026</span>
             </p>
             <p>Conçu et développé au cœur de la Provence par les équipes de <a href="studio.html">Flexarion</a>, <strong>Anni 2810</strong> est un Tactical-RPG spatial exigeant qui plonge les joueurs dans un huis clos cosmique où chaque décision tactique engage la survie de tout un équipage.</p>
             <p>
@@ -149,7 +151,7 @@
             </p>
 
             <figure class="media-container">
-                <img src="assets/images/screenshot.jpg" alt="Capture d'écran du gameplay d'Anni 2810 montrant une manœuvre orbitale de l'Explorateur Anni autour de la mégastructure alien l'Artefact" loading="lazy" width="1920" height="1080">
+                <img src="assets/images/screenshot.svg" alt="Capture d'écran du gameplay d'Anni 2810 montrant une manœuvre orbitale de l'Explorateur Anni autour de la mégastructure alien l'Artefact" width="1920" height="1080">
                 <figcaption>Manœuvre d'approche de l'Explorateur Anni dans le secteur de confinement de l'Artefact — capture in-game du moteur C++ propriétaire Flexarion.</figcaption>
             </figure>
 
@@ -220,8 +222,13 @@
                 <span class="genre-tag">Roguelike</span>
                 <span class="genre-tag">Exploration</span>
                 <span class="genre-tag">Survie spatiale</span>
-                <span class="status-badge" style="background:var(--success);position:static">En développement — 2027</span>
+                <span class="status-badge status-active" style="position:static">En développement — 2027</span>
             </p>
+
+            <figure class="media-container">
+                <img src="assets/images/nexus-void.svg" alt="Concept visuel officiel de Nexus Void, roguelike d'exploration spatiale par Flexarion" width="1200" height="675">
+                <figcaption>Concept visuel officiel de Nexus Void &mdash; Exploration de singularités et de nébuleuses procédurales en vue isométrique.</figcaption>
+            </figure>
 
             <article class="card card-stack">
                 <h3>Plongez dans l'abîme interstellaire</h3>
@@ -269,8 +276,13 @@
                 <span class="genre-tag">FPS Tactique</span>
                 <span class="genre-tag">Coopératif 1-4</span>
                 <span class="genre-tag">Horreur Sci-Fi</span>
-                <span class="status-badge" style="background:var(--info);position:static">Pré-production — 2028</span>
+                <span class="status-badge status-dev" style="position:static">Pré-production — 2028</span>
             </p>
+
+            <figure class="media-container">
+                <img src="assets/images/helios-protocol.svg" alt="Concept visuel officiel d'Helios Protocol, FPS spatial coopératif par Flexarion" width="1200" height="675">
+                <figcaption>Concept visuel officiel d'Helios Protocol &mdash; Station spatiale orbitale en dérive thermique autour d'une étoile mourante.</figcaption>
+            </figure>
 
             <article class="card card-stack">
                 <h3>Extraction en orbite d'un soleil mourant</h3>
@@ -312,8 +324,13 @@
                 <span class="genre-tag">Puzzle</span>
                 <span class="genre-tag">Aventure Narrative</span>
                 <span class="genre-tag">Science-Fiction</span>
-                <span class="status-badge" style="background:var(--warning);position:static">Prototype — 2028</span>
+                <span class="status-badge status-concept" style="position:static">Prototype — 2028</span>
             </p>
+
+            <figure class="media-container">
+                <img src="assets/images/chronos-drift.svg" alt="Concept visuel officiel de Chronos Drift, puzzle temporel par Flexarion" width="1200" height="675">
+                <figcaption>Concept visuel officiel de Chronos Drift &mdash; Ondes d'entropie et distorsions temporelles à bord du vaisseau générationnel.</figcaption>
+            </figure>
 
             <article class="card card-stack">
                 <h3>Le temps comme terrain de jeu</h3>
@@ -355,8 +372,13 @@
                 <span class="genre-tag">City-Builder</span>
                 <span class="genre-tag">Simulation</span>
                 <span class="genre-tag">Stratégie</span>
-                <span class="status-badge" style="background:var(--text-muted);position:static">Concept — 2029</span>
+                <span class="status-badge status-idle" style="position:static">Concept — 2029</span>
             </p>
+
+            <figure class="media-container">
+                <img src="assets/images/stellar-forge.svg" alt="Concept visuel officiel de Stellar Forge, city-builder spatial par Flexarion" width="1200" height="675">
+                <figcaption>Concept visuel officiel de Stellar Forge &mdash; Minage d'astéroïde dans la ceinture de Kuiper et routes de transfert orbitales.</figcaption>
+            </figure>
 
             <article class="card card-stack">
                 <h3>Bâtissez une civilisation dans le vide</h3>
@@ -406,3 +428,4 @@
     <script>document.querySelector('.menu-toggle').addEventListener('click',function(){this.classList.toggle('active');document.querySelector('nav ul').classList.toggle('nav-open');this.setAttribute('aria-expanded',this.classList.contains('active'))})</script>
 </body>
 </html>
+

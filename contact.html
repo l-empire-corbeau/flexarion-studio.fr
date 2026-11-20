@@ -7,19 +7,20 @@
     <title>Contact & Espace Presse | Studio Flexarion (Aix-en-Provence)</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta name="description" content="Contactez le Studio Flexarion à Aix-en-Provence : relations presse, demandes d'accès anticipé à Anni 2810, partenariats et kit média officiel.">
-    <meta name="theme-color" content="#7c3aed">
+    <meta name="theme-color" content="#6d28d9">
+    <link rel="manifest" href="manifest.json">
     <meta property="og:title" content="Contact & Espace Presse | Studio Flexarion — Aix-en-Provence">
     <meta property="og:description" content="Espace officiel de contact et relations presse du Studio Flexarion, développeurs indépendants de science-fiction à Aix-en-Provence.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://flexarion-studio.fr/contact.html">
-    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/photo_groupe.jpg">
+    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/photo_groupe.svg">
     <meta property="og:image:alt" content="L'équipe du Studio Flexarion à Aix-en-Provence">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Flexarion">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact & Relations Presse | Studio Flexarion">
     <meta name="twitter:description" content="Contactez les développeurs d'Anni 2810 à Aix-en-Provence. Formulaire, kit presse et informations de contact.">
-    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/photo_groupe.jpg">
+    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/photo_groupe.svg">
     <script type="application/ld+json">
     [
     {
@@ -49,9 +50,6 @@
             "addressRegion": "Provence-Alpes-Côte d'Azur",
             "addressCountry": "FR"
         },
-        "sameAs": [
-            "https://twitter.com/FlexarionStudio"
-        ],
         "contactPoint": [
             {
                 "@type": "ContactPoint",
@@ -117,7 +115,7 @@
     }
     ]
     </script>
-    <link rel="stylesheet" href="assets/stylesheets/style.css?v=3">
+    <link rel="preload" href="assets/stylesheets/style.css?v=4" as="style"><link rel="stylesheet" href="assets/stylesheets/style.css?v=4">
     <link rel="canonical" href="https://flexarion-studio.fr/contact.html">
     <link rel="alternate" hreflang="fr-fr" href="https://flexarion-studio.fr/contact.html">
 </head>
@@ -170,14 +168,13 @@
                 </article>
 
                 <article class="card">
-                    <h3>🌐 Réseaux Sociaux & Annonces</h3>
-                    <p>Suivez les actualités en direct du studio et les teasers d'Anni 2810 :</p>
-                    <p><strong>X (Twitter) :</strong> <a href="https://twitter.com/FlexarionStudio" target="_blank" rel="noopener">@FlexarionStudio</a></p>
-                    <p>Retrouvez aussi nos <a href="devlogs.html">29 carnets de bord de développement</a>.</p>
+                    <h3>📢 Actualités & Publications</h3>
+                    <p>Suivez les avancées en direct du studio et les coulisses de nos technologies :</p>
+                    <p>Consultez nos <a href="devlogs.html">29 carnets de bord de développement</a> et notre section actualités.</p>
                 </article>
             </div>
 
-            <figure class="media-container" style="margin-top:2rem;">
+            <figure class="media-container">
                 <img src="assets/images/plan-acces-aix.svg" alt="Plan d'accès au Studio Flexarion à Aix-en-Provence" loading="lazy" width="800" height="450">
                 <figcaption>Ateliers et bureaux du Studio Flexarion : Technopôle de l'Arbois, Aix-en-Provence (13100), France.</figcaption>
             </figure>
@@ -228,14 +225,14 @@
                     <textarea id="message" name="message" class="form-control" rows="5" placeholder="Décrivez votre demande en quelques phrases..." required></textarea>
                 </div>
 
-                <div class="form-group" style="margin-top:1rem;">
+                <div class="form-group">
                     <label style="display:flex;align-items:flex-start;gap:0.5rem;font-weight:normal;font-size:0.85rem;color:var(--text-muted);cursor:pointer;">
                         <input type="checkbox" required style="margin-top:0.25rem;">
                         <span>J'accepte que les informations saisies soient utilisées par le Studio Flexarion pour répondre à ma demande, dans le respect des <a href="mentions-legales.html">mentions légales et de confidentialité</a>.</span>
                     </label>
                 </div>
 
-                <button type="submit" class="btn" style="margin-top:1rem;cursor:pointer;">Transmettre mon message &rarr;</button>
+                <button type="submit" class="btn">Transmettre mon message &rarr;</button>
             </form>
         </section>
 
@@ -253,8 +250,10 @@
                 </ul>
                 <div class="press-badges">
                     <a href="mailto:contact@flexarion-studio.fr?subject=Demande%20Press%20Kit%20Flexarion" class="press-badge">📥 Demander l'archive du Press Kit (ZIP HD)</a>
-                    <a href="assets/images/screenshot.jpg" target="_blank" rel="noopener" class="press-badge">🖼️ Télécharger la capture principale (2752x1536)</a>
-                    <a href="assets/images/favicon.png" target="_blank" rel="noopener" class="press-badge">✨ Télécharger le logo officiel (.PNG)</a>
+                    <a href="assets/images/screenshot.svg" target="_blank" rel="noopener" class="press-badge">🖼️ Télécharger le visuel principal (.SVG)</a>
+                    <a href="assets/images/logo.svg" target="_blank" rel="noopener" class="press-badge">✨ Télécharger le logo officiel (.SVG)</a>
+                    <a href="assets/images/photo_groupe.svg" target="_blank" rel="noopener" class="press-badge">👥 Télécharger le visuel de l'équipe (.SVG)</a>
+                    <a href="assets/images/favicon.png" target="_blank" rel="noopener" class="press-badge">📦 Pack icônes PWA & Favicon (.PNG)</a>
                 </div>
             </div>
 
@@ -282,7 +281,7 @@
             <details class="faq-item">
                 <summary>Comment recevoir une clé d'accès anticipé pour réaliser un test ou une vidéo ?</summary>
                 <div class="faq-content">
-                    <p>Envoyez-nous simplement un email à <a href="mailto:contact@flexarion-studio.fr">contact@flexarion-studio.fr</a> ou complétez le formulaire ci-dessus avec la mention « Demande de clé Bêta ». Merci d'inclure le lien vers votre publication, chaîne Twitch/YouTube ou compte Twitter afin que nous puissions valider votre demande.</p>
+                    <p>Envoyez-nous simplement un email à <a href="mailto:contact@flexarion-studio.fr">contact@flexarion-studio.fr</a> ou complétez le formulaire ci-dessus avec la mention « Demande de clé Bêta ». Merci d'inclure le lien vers votre publication, site média ou chaîne vidéo afin que nous puissions valider votre demande.</p>
                 </div>
             </details>
 
@@ -324,3 +323,4 @@
     </script>
 </body>
 </html>
+

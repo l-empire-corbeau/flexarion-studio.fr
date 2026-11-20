@@ -1,44 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://flexarion-studio.fr/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/screenshot.svg</image:loc>
+      <image:title>Studio Flexarion - Simulation spatiale et Anni 2810 à Aix-en-Provence</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/logo.svg</image:loc>
+      <image:title>Logo officiel du Studio Flexarion</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://flexarion-studio.fr/anni-2810.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/screenshot.svg</image:loc>
+      <image:title>Capture d'écran in-game Anni 2810 - Mégastructure l'Artefact</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/schema-orbite.svg</image:loc>
+      <image:title>Schéma orbital et intégrateur de Verlet Anni 2810</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://flexarion-studio.fr/studio.html</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/photo_groupe.svg</image:loc>
+      <image:title>L'équipe fondatrice du Studio Flexarion à Aix-en-Provence</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/plan-acces-aix.svg</image:loc>
+      <image:title>Plan d'accès au Studio Flexarion - Technopôle de l'Arbois Aix-en-Provence</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://flexarion-studio.fr/jeux.html</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/nexus-void.svg</image:loc>
+      <image:title>Nexus Void - Roguelike spatial Flexarion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/helios-protocol.svg</image:loc>
+      <image:title>Helios Protocol - FPS tactique coopératif Flexarion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/chronos-drift.svg</image:loc>
+      <image:title>Chronos Drift - Puzzle narratif temporel Flexarion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/stellar-forge.svg</image:loc>
+      <image:title>Stellar Forge - Simulation colonie spatiale Flexarion</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://flexarion-studio.fr/devlogs.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://flexarion-studio.fr/contact.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://flexarion-studio.fr/assets/images/plan-acces-aix.svg</image:loc>
+      <image:title>Plan de localisation du Studio Flexarion à Aix-en-Provence</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://flexarion-studio.fr/mentions-legales.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>

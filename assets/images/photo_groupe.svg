@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 572" width="100%" height="100%" fill="none" role="img" aria-label="L'équipe du Studio Flexarion réunie dans notre atelier de développement à Aix-en-Provence">
+  <rect width="1024" height="572" fill="#090b0e"/>
+
+  <!-- Fond atelier technique & baie vitrée donnant sur Sainte-Victoire -->
+  <g stroke="#171c26" stroke-width="1">
+    <line x1="0" y1="120" x2="1024" y2="120"/>
+    <line x1="0" y1="280" x2="1024" y2="280"/>
+    <line x1="0" y1="440" x2="1024" y2="440"/>
+    <line x1="256" y1="0" x2="256" y2="572"/>
+    <line x1="512" y1="0" x2="512" y2="572"/>
+    <line x1="768" y1="0" x2="768" y2="572"/>
+  </g>
+
+  <!-- Ligne de crête stylisée de la Montagne Sainte-Victoire en arrière-plan -->
+  <polygon points="120,280 280,210 440,170 620,230 840,190 1024,240 1024,280 120,280" fill="#11151c"/>
+
+  <!-- Écrans de contrôle & stations de travail C++/Vulkan -->
+  <g fill="#161b24" stroke="#202734" stroke-width="1.5">
+    <rect x="80" y="320" width="140" height="85" rx="3"/>
+    <rect x="250" y="310" width="150" height="95" rx="3"/>
+    <rect x="620" y="310" width="150" height="95" rx="3"/>
+    <rect x="800" y="320" width="140" height="85" rx="3"/>
+  </g>
+  <!-- Lignes de télémétrie sur écrans -->
+  <line x1="95" y1="345" x2="190" y2="345" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="95" y1="365" x2="160" y2="365" stroke="#3b82f6" stroke-width="1.5"/>
+  <line x1="265" y1="340" x2="370" y2="340" stroke="#a78bfa" stroke-width="2"/>
+  <line x1="265" y1="360" x2="340" y2="360" stroke="#34d399" stroke-width="1.5"/>
+  <line x1="635" y1="340" x2="740" y2="340" stroke="#60a5fa" stroke-width="2"/>
+  <line x1="815" y1="345" x2="910" y2="345" stroke="#fbbf24" stroke-width="2"/>
+
+  <!-- Les 5 membres fondateurs du Studio Flexarion (silhouettes professionnelles sobres) -->
+  <!-- Membre 1 : Directeur Technique / Moteur C++ -->
+  <g transform="translate(240, 360)">
+    <circle cx="0" cy="-60" r="22" fill="#1e293b" stroke="#6d28d9" stroke-width="2"/>
+    <path d="M -35,20 C -35,-25 35,-25 35,20 Z" fill="#161b24" stroke="#475569" stroke-width="1.5"/>
+    <text x="0" y="45" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#f8fafc" text-anchor="middle">Alexandre M.</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="9" fill="#8b9bb0" text-anchor="middle">Moteur C++ & Vulkan</text>
+  </g>
+
+  <!-- Membre 2 : Lead Game Designer / Systèmes -->
+  <g transform="translate(370, 340)">
+    <circle cx="0" cy="-60" r="22" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <path d="M -35,20 C -35,-25 35,-25 35,20 Z" fill="#161b24" stroke="#475569" stroke-width="1.5"/>
+    <text x="0" y="45" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#f8fafc" text-anchor="middle">Camille D.</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="9" fill="#8b9bb0" text-anchor="middle">Game Design & Hard-SF</text>
+  </g>
+
+  <!-- Membre 3 : Directrice Artistique & Worldbuilding (Centre) -->
+  <g transform="translate(512, 330)">
+    <circle cx="0" cy="-65" r="24" fill="#1e293b" stroke="#a78bfa" stroke-width="2.5"/>
+    <path d="M -40,25 C -40,-30 40,-30 40,25 Z" fill="#161b24" stroke="#6d28d9" stroke-width="1.5"/>
+    <text x="0" y="50" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Éléonore V.</text>
+    <text x="0" y="66" font-family="ui-monospace, monospace" font-size="9.5" fill="#c4b5fd" text-anchor="middle">Direction Artistique</text>
+  </g>
+
+  <!-- Membre 4 : Spécialiste IA & Génération Procédurale -->
+  <g transform="translate(650, 340)">
+    <circle cx="0" cy="-60" r="22" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <path d="M -35,20 C -35,-25 35,-25 35,20 Z" fill="#161b24" stroke="#475569" stroke-width="1.5"/>
+    <text x="0" y="45" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#f8fafc" text-anchor="middle">Julien B.</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="9" fill="#8b9bb0" text-anchor="middle">Génération WFC & ECS</text>
+  </g>
+
+  <!-- Membre 5 : Ingénieur Son & Acoustique Spatiale -->
+  <g transform="translate(780, 360)">
+    <circle cx="0" cy="-60" r="22" fill="#1e293b" stroke="#6d28d9" stroke-width="2"/>
+    <path d="M -35,20 C -35,-25 35,-25 35,20 Z" fill="#161b24" stroke="#475569" stroke-width="1.5"/>
+    <text x="0" y="45" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#f8fafc" text-anchor="middle">Marc L.</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="9" fill="#8b9bb0" text-anchor="middle">Synthèse Granulaire</text>
+  </g>
+
+  <!-- Cartouche officiel -->
+  <rect x="40" y="40" width="360" height="70" rx="4" fill="#10141a" stroke="#202734" stroke-width="1"/>
+  <text x="60" y="68" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#ffffff" letter-spacing="0.03em">L'ÉQUIPE FONDATRICE &bull; FLEXARION</text>
+  <text x="60" y="88" font-family="ui-monospace, monospace" font-size="10.5" fill="#8b9bb0">Atelier de développement &bull; Technopôle de l'Arbois, Aix</text>
+
+  <text x="980" y="540" font-family="ui-monospace, monospace" font-size="11" fill="#475569" text-anchor="end">FLEXARION STUDIO &bull; 13100 AIX-EN-PROVENCE</text>
+</svg>

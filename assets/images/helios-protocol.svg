@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%" fill="none" role="img" aria-label="Concept visuel d'Helios Protocol : station spatiale en orbite d'un soleil mourant">
+  <defs>
+    <radialGradient id="solarFlare" cx="85%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.8"/>
+      <stop offset="35%" stop-color="#b45309" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#090b0e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="#090b0e"/>
+
+  <!-- Éclat du soleil mourant -->
+  <circle cx="1050" cy="180" r="420" fill="url(#solarFlare)"/>
+  <circle cx="1050" cy="180" r="160" fill="#7c2d12" stroke="#ea580c" stroke-width="2"/>
+
+  <!-- Station spatiale modulaire abandonnée -->
+  <g transform="translate(420, 360)">
+    <!-- Axe central -->
+    <rect x="-180" y="-12" width="360" height="24" rx="2" fill="#161b24" stroke="#475569" stroke-width="1.5"/>
+    
+    <!-- Anneau d'habitat toroïdal -->
+    <ellipse cx="0" cy="0" rx="90" ry="160" stroke="#6d28d9" stroke-width="3" fill="none"/>
+    <ellipse cx="0" cy="0" rx="65" ry="120" stroke="#202734" stroke-width="1.5" stroke-dasharray="8 6" fill="none"/>
+
+    <!-- Panneaux solaires endommagés -->
+    <rect x="-260" y="-45" width="70" height="90" fill="#10141a" stroke="#d97706" stroke-width="1"/>
+    <rect x="190" y="-45" width="70" height="90" fill="#10141a" stroke="#475569" stroke-width="1"/>
+
+    <!-- Éléments de structure -->
+    <circle cx="0" cy="0" r="28" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="0" cy="0" r="8" fill="#e2e8f0"/>
+  </g>
+
+  <!-- Navette d'évacuation tactique en approche -->
+  <g transform="translate(180, 220) rotate(25)">
+    <polygon points="0,-12 24,10 -24,10" fill="#161b24" stroke="#60a5fa" stroke-width="2"/>
+    <circle cx="0" cy="0" r="2" fill="#93c5fd"/>
+    <line x1="-10" y1="10" x2="-10" y2="18" stroke="#3b82f6" stroke-width="2"/>
+    <line x1="10" y1="10" x2="10" y2="18" stroke="#3b82f6" stroke-width="2"/>
+  </g>
+
+  <!-- Cartouche d'ingénierie UI -->
+  <rect x="50" y="50" width="350" height="95" rx="4" fill="#10141a" stroke="#202734" stroke-width="1"/>
+  <text x="70" y="78" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#60a5fa">HELIOS PROTOCOL &bull; FPS TACTIQUE COOP</text>
+  <text x="70" y="100" font-family="ui-monospace, monospace" font-size="11" fill="#8b9bb0">Combat zéro-G &bull; Extraction thermique</text>
+  <text x="70" y="120" font-family="ui-monospace, monospace" font-size="11" fill="#fbbf24">Statut : Pré-production &bull; Coopératif 1-4</text>
+
+  <text x="1150" y="635" font-family="ui-monospace, monospace" font-size="11" fill="#475569" text-anchor="end">FLEXARION STUDIO &bull; ARCHITECTURE SPATIALE</text>
+</svg>

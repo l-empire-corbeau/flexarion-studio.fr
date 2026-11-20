@@ -1,3 +1,18 @@
 User-agent: *
 Allow: /
+
+# Sitemap officiel du Studio Flexarion
 Sitemap: https://flexarion-studio.fr/sitemap.xml
+
+# Directives spécifiques aux bots majeurs de recherche
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+Allow: /assets/images/
+Allow: /assets/stylesheets/
+
+User-agent: Bingbot
+Allow: /
+Allow: /assets/
+Allow: /assets/images/
+Allow: /assets/stylesheets/

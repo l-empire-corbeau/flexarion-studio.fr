@@ -7,19 +7,19 @@
     <title>Anni 2810 | Jeu Phare Hard-SF du Studio Flexarion</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta name="description" content="Découvrez Anni 2810, jeu phare du Studio Flexarion à Aix-en-Provence : Tactical-RPG spatial, mécanique orbitale newtonienne et génération WFC.">
-    <meta name="theme-color" content="#7c3aed">
+    <meta name="theme-color" content="#6d28d9">
     <meta property="og:title" content="Anni 2810 | Tactical-RPG Hard Science-Fiction — Studio Flexarion">
     <meta property="og:description" content="Jeu vidéo de science-fiction indépendant développé à Aix-en-Provence. Mécanique céleste newtonienne, combats tactiques en apesanteur et survie orbitale.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://flexarion-studio.fr/anni-2810.html">
-    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
+    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/screenshot.svg">
     <meta property="og:image:alt" content="Capture d'écran du gameplay d'Anni 2810 en orbite de l'Artefact">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Flexarion">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Anni 2810 | Jeu Phare Hard-SF — Flexarion Studio">
     <meta name="twitter:description" content="Tactical-RPG spatial exigeant conçu par Flexarion à Aix-en-Provence. Moteur C++ propriétaire, physique newtonienne et génération WFC.">
-    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
+    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/screenshot.svg">
     <script type="application/ld+json">
     [
     {
@@ -34,7 +34,7 @@
         "applicationCategory": "Game",
         "inLanguage": "fr",
         "url": "https://flexarion-studio.fr/anni-2810.html",
-        "image": "https://flexarion-studio.fr/assets/images/screenshot.jpg",
+        "image": "https://flexarion-studio.fr/assets/images/screenshot.svg",
         "author": {
             "@type": "Organization",
             "name": "Flexarion",
@@ -120,7 +120,7 @@
     }
     ]
     </script>
-    <link rel="stylesheet" href="assets/stylesheets/style.css?v=3">
+    <link rel="preload" href="assets/stylesheets/style.css?v=4" as="style"><link rel="stylesheet" href="assets/stylesheets/style.css?v=4">
     <link rel="canonical" href="https://flexarion-studio.fr/anni-2810.html">
     <link rel="alternate" hreflang="fr-fr" href="https://flexarion-studio.fr/anni-2810.html">
 </head>
@@ -175,7 +175,7 @@
         <section id="visuels">
             <h2>Visuels Officiels & Moteur C++ Propriétaire</h2>
             <figure class="media-container">
-                <img src="assets/images/screenshot.jpg" alt="Capture d'écran in-game d'Anni 2810 montrant la manœuvre orbitale de l'Explorateur Anni autour de la mégastructure alien l'Artefact" loading="lazy" width="2752" height="1536">
+                <img src="assets/images/screenshot.svg" alt="Capture d'écran in-game d'Anni 2810 montrant la manœuvre orbitale de l'Explorateur Anni autour de la mégastructure alien l'Artefact" width="1920" height="1080">
                 <figcaption>Manœuvre de freinage orbital de l'Explorateur Anni dans le halo gravitationnel de l'Artefact &mdash; Rendu temps réel issu du moteur C++ Vulkan conçu par Flexarion à Aix-en-Provence.</figcaption>
             </figure>
 
@@ -186,13 +186,13 @@
 
             <!-- Simulateur interactif Canvas calculé en temps réel -->
             <div class="canvas-card" aria-label="Simulateur d'orbite newtonienne interactif">
-                <h3 style="margin-top:0.5rem;font-size:1.15rem;color:#fff;">Simulateur Orbital Temps Réel &bull; Physique Newtonienne</h3>
-                <p style="font-size:0.85rem;color:var(--text-muted);max-width:620px;margin:0 auto 1rem;">Démonstration interactive de l'intégrateur de Verlet : gravitation $F = G \frac{M m}{r^2}$ calculée en temps réel dans votre navigateur, identique au cœur physique d'Anni 2810.</p>
+                <h3>Simulateur Orbital Temps Réel &bull; Physique Newtonienne</h3>
+                <p>Démonstration interactive de l'intégrateur de Verlet : gravitation F = G &times; (M &times; m) / r&sup2; calculée en temps réel dans votre navigateur, identique au cœur physique d'Anni 2810.</p>
                 <canvas id="orbitCanvas" width="760" height="340" role="img" aria-label="Simulation animée de l'orbite de l'Explorateur Anni"></canvas>
                 <div class="canvas-legend">
-                    <span><strong class="canvas-dot" style="background:#a855f7;"></strong> L'Artefact (Attracteur gravitationnel)</span>
-                    <span><strong class="canvas-dot" style="background:#38bdf8;"></strong> Explorateur Anni (Vaisseau)</span>
-                    <span><strong class="canvas-dot" style="background:rgba(56,189,248,0.5);"></strong> Trace de trajectoire orbitale</span>
+                    <span><strong class="canvas-dot" style="background:#8b5cf6;"></strong> L'Artefact (Attracteur gravitationnel)</span>
+                    <span><strong class="canvas-dot" style="background:#e2e8f0;"></strong> Explorateur Anni (Vaisseau)</span>
+                    <span><strong class="canvas-dot" style="background:rgba(139,92,246,0.6);"></strong> Trace de trajectoire orbitale</span>
                 </div>
             </div>
 
@@ -408,11 +408,11 @@
             }
 
             function draw() {
-                ctx.fillStyle = '#07090e';
+                ctx.fillStyle = '#06070a';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
                 // Grille subtile
-                ctx.strokeStyle = 'rgba(30, 41, 59, 0.4)';
+                ctx.strokeStyle = 'rgba(32, 39, 52, 0.5)';
                 ctx.lineWidth = 1;
                 for (let x = 0; x < canvas.width; x += 60) {
                     ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
@@ -421,29 +421,29 @@
                     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
                 }
 
-                // Halo gravitationnel de l'Artefact
-                const grad = ctx.createRadialGradient(cx, cy, 10, cx, cy, 120);
-                grad.addColorStop(0, 'rgba(124, 58, 237, 0.35)');
-                grad.addColorStop(1, 'rgba(10, 12, 16, 0)');
+                // Halo gravitationnel sobre de l'Artefact
+                const grad = ctx.createRadialGradient(cx, cy, 10, cx, cy, 110);
+                grad.addColorStop(0, 'rgba(109, 40, 217, 0.25)');
+                grad.addColorStop(1, 'rgba(9, 11, 14, 0)');
                 ctx.fillStyle = grad;
                 ctx.beginPath();
-                ctx.arc(cx, cy, 120, 0, Math.PI * 2);
+                ctx.arc(cx, cy, 110, 0, Math.PI * 2);
                 ctx.fill();
 
                 // L'Artefact central
-                ctx.fillStyle = '#7c3aed';
+                ctx.fillStyle = '#5b21b6';
                 ctx.beginPath();
-                ctx.arc(cx, cy, 14, 0, Math.PI * 2);
+                ctx.arc(cx, cy, 12, 0, Math.PI * 2);
                 ctx.fill();
-                ctx.fillStyle = '#ffffff';
+                ctx.fillStyle = '#f8fafc';
                 ctx.beginPath();
-                ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+                ctx.arc(cx, cy, 3, 0, Math.PI * 2);
                 ctx.fill();
 
                 // Trajectoire orbitale passée
                 if (trail.length > 1) {
-                    ctx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
-                    ctx.lineWidth = 1.8;
+                    ctx.strokeStyle = 'rgba(139, 92, 246, 0.55)';
+                    ctx.lineWidth = 1.5;
                     ctx.beginPath();
                     ctx.moveTo(trail[0].x, trail[0].y);
                     for (let i = 1; i < trail.length; i++) {
@@ -453,18 +453,14 @@
                 }
 
                 // Vaisseau Explorateur Anni
-                ctx.fillStyle = '#38bdf8';
+                ctx.fillStyle = '#f8fafc';
                 ctx.beginPath();
-                ctx.arc(pos.x, pos.y, 4.5, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.fillStyle = '#ffffff';
-                ctx.beginPath();
-                ctx.arc(pos.x, pos.y, 2, 0, Math.PI * 2);
+                ctx.arc(pos.x, pos.y, 4, 0, Math.PI * 2);
                 ctx.fill();
 
                 // Télémétrie in-canvas
-                ctx.fillStyle = '#94a3b8';
-                ctx.font = '10px monospace';
+                ctx.fillStyle = '#8b9bb0';
+                ctx.font = '10px ui-monospace, monospace';
                 const dist = Math.round(Math.hypot(pos.x - cx, pos.y - cy) * 10);
                 const spd = (Math.hypot(vel.x, vel.y) * 4.2).toFixed(1);
                 ctx.fillText('ALTITUDE : ' + dist + ' km | VITESSE : ' + spd + ' km/s (Cliquez pour impulsion Delta-V)', 14, canvas.height - 14);
@@ -492,3 +488,4 @@
     </script>
 </body>
 </html>
+

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%" fill="none" role="img" aria-label="Concept visuel de Stellar Forge : colonie minière sur astéroïde et logistique orbitale">
+  <rect width="1200" height="675" fill="#090b0e"/>
+
+  <!-- Fond étoilé discret -->
+  <g fill="#5c6b7e" opacity="0.5">
+    <circle cx="120" cy="180" r="1"/>
+    <circle cx="340" cy="90" r="1.5"/>
+    <circle cx="890" cy="110" r="1"/>
+    <circle cx="1040" cy="220" r="1.5"/>
+    <circle cx="980" cy="540" r="1"/>
+    <circle cx="210" cy="480" r="1.5"/>
+  </g>
+
+  <!-- Astéroïde minier massif (silhouette géologique) -->
+  <g transform="translate(620, 360)">
+    <polygon points="-280,-120 -140,-210 120,-180 260,-90 310,80 220,210 -40,240 -220,180 -310,30" 
+             fill="#11151c" stroke="#252d3d" stroke-width="3"/>
+    
+    <!-- Cratères & galeries de minage -->
+    <ellipse cx="-80" cy="-60" rx="45" ry="30" stroke="#3b465a" stroke-width="1.5" fill="#0d1017"/>
+    <ellipse cx="110" cy="40" rx="60" ry="40" stroke="#3b465a" stroke-width="1.5" fill="#0d1017"/>
+    <ellipse cx="-140" cy="70" rx="35" ry="25" stroke="#3b465a" stroke-width="1.5" fill="#0d1017"/>
+
+    <!-- Puits d'extraction et structures industrielles -->
+    <line x1="-80" y1="-60" x2="-80" y2="-120" stroke="#d97706" stroke-width="2"/>
+    <rect x="-95" y="-140" width="30" height="20" fill="#161b24" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="-80" cy="-130" r="3" fill="#fbbf24"/>
+
+    <!-- Dôme d'habitat pressurisé -->
+    <circle cx="40" cy="-120" r="35" stroke="#60a5fa" stroke-width="2" fill="rgba(37,99,235,0.15)"/>
+    <circle cx="40" cy="-120" r="6" fill="#93c5fd"/>
+  </g>
+
+  <!-- Orbite de transfert de Hohmann pour navire cargo -->
+  <ellipse cx="620" cy="360" rx="440" ry="260" stroke="#6d28d9" stroke-width="1.5" stroke-dasharray="10 8"/>
+  
+  <!-- Cargo spatial de ravitaillement -->
+  <g transform="translate(220, 260) rotate(-35)">
+    <rect x="-18" y="-8" width="36" height="16" rx="2" fill="#1e293b" stroke="#e2e8f0" stroke-width="1.5"/>
+    <line x1="-18" y1="0" x2="-28" y2="0" stroke="#8b5cf6" stroke-width="3"/>
+    <circle cx="10" cy="0" r="2" fill="#38bdf8"/>
+    <text x="25" y="4" font-family="ui-monospace, monospace" font-size="10" fill="#c4b5fd">Cargo Minier Kuiper-7</text>
+  </g>
+
+  <!-- Cartouche d'ingénierie UI -->
+  <rect x="50" y="50" width="350" height="95" rx="4" fill="#10141a" stroke="#202734" stroke-width="1"/>
+  <text x="70" y="78" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#94a3b8">STELLAR FORGE &bull; COLONIE SPATIALE</text>
+  <text x="70" y="100" font-family="ui-monospace, monospace" font-size="11" fill="#8b9bb0">Minage d'astéroïde &bull; Balistique de Hohmann</text>
+  <text x="70" y="120" font-family="ui-monospace, monospace" font-size="11" fill="#475569">Simulation économique & survie sociétale</text>
+
+  <text x="1150" y="635" font-family="ui-monospace, monospace" font-size="11" fill="#475569" text-anchor="end">FLEXARION STUDIO &bull; SIMULATION SPATIALE</text>
+</svg>

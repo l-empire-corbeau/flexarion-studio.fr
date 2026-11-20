@@ -7,19 +7,19 @@
     <title>Flexarion | Studio de Jeux Vidéo Hard-SF à Aix-en-Provence</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta name="description" content="Flexarion est un studio indépendant de jeux vidéo de science-fiction à Aix-en-Provence. Découvrez Anni 2810, nos technologies et nos 29 devlogs.">
-    <meta name="theme-color" content="#7c3aed">
+    <meta name="theme-color" content="#6d28d9">
     <link rel="manifest" href="manifest.json">
     <meta property="og:title" content="Flexarion | Studio Indépendant de Jeux Vidéo Science-Fiction">
     <meta property="og:description" content="Studio indépendant français créant des jeux vidéo de science-fiction immersifs avec physique réaliste et génération procédurale.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://flexarion-studio.fr/">
-    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
+    <meta property="og:image" content="https://flexarion-studio.fr/assets/images/screenshot.svg">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Flexarion">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Flexarion | Studio Indépendant de Jeux Vidéo Science-Fiction">
     <meta name="twitter:description" content="Studio indépendant français créant des jeux de science-fiction immersifs. Physique réaliste, narration émergente, Aix-en-Provence.">
-    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/screenshot.jpg">
+    <meta name="twitter:image" content="https://flexarion-studio.fr/assets/images/screenshot.svg">
     <script type="application/ld+json">
     [{
         "@context": "https://schema.org",
@@ -36,7 +36,6 @@
             "postalCode": "13100",
             "addressCountry": "FR"
         },
-        "sameAs": ["https://twitter.com/FlexarionStudio"],
         "contactPoint": {
             "@type": "ContactPoint",
             "email": "contact@flexarion-studio.fr",
@@ -97,7 +96,7 @@
         ]
     }]
     </script>
-    <link rel="stylesheet" href="assets/stylesheets/style.css?v=3">
+    <link rel="preload" href="assets/stylesheets/style.css?v=4" as="style"><link rel="stylesheet" href="assets/stylesheets/style.css?v=4">
     <link rel="canonical" href="https://flexarion-studio.fr/">
     <link rel="alternate" hreflang="fr-fr" href="https://flexarion-studio.fr/">
 </head>
@@ -129,6 +128,10 @@
                 <a href="jeux.html" class="btn btn-secondary">Catalogue complet</a>
                 <a href="studio.html" class="btn btn-secondary">Le Studio</a>
             </p>
+            <figure class="media-container">
+                <img src="assets/images/screenshot.svg" alt="Capture d'écran du moteur C++ Vulkan d'Anni 2810 en orbite autour de l'Artefact" width="1920" height="1080">
+                <figcaption>Rendu temps réel du moteur de simulation spatiale Flexarion &mdash; Approche orbitale de l'Explorateur Anni vers l'Artefact.</figcaption>
+            </figure>
         </section>
 
         <!-- ═══════ JEUX PHARES ═══════ -->
@@ -138,7 +141,7 @@
             <div class="grid">
 
                 <article class="card game-card">
-                    <span class="status-badge" style="background:var(--success)">Early Access 2026</span>
+                    <span class="status-badge status-active">Early Access 2026</span>
                     <span class="genre-tag">Tactical-RPG</span>
                     <span class="genre-tag">Hard-SF</span>
                     <span class="genre-tag">Survie</span>
@@ -148,7 +151,7 @@
                 </article>
 
                 <article class="card game-card">
-                    <span class="status-badge" style="background:var(--success)">En développement</span>
+                    <span class="status-badge status-active">En développement</span>
                     <span class="genre-tag">Roguelike</span>
                     <span class="genre-tag">Exploration</span>
                     <h3>Nexus Void</h3>
@@ -157,7 +160,7 @@
                 </article>
 
                 <article class="card game-card">
-                    <span class="status-badge" style="background:var(--info)">Pré-production</span>
+                    <span class="status-badge status-dev">Pré-production</span>
                     <span class="genre-tag">FPS Tactique</span>
                     <span class="genre-tag">Coopératif</span>
                     <h3>Helios Protocol</h3>
@@ -166,7 +169,7 @@
                 </article>
 
                 <article class="card game-card">
-                    <span class="status-badge" style="background:var(--warning)">Prototype</span>
+                    <span class="status-badge status-concept">Prototype</span>
                     <span class="genre-tag">Puzzle</span>
                     <span class="genre-tag">Narratif</span>
                     <h3>Chronos Drift</h3>
@@ -175,7 +178,7 @@
                 </article>
 
                 <article class="card game-card">
-                    <span class="status-badge" style="background:var(--text-muted)">Concept</span>
+                    <span class="status-badge status-idle">Concept</span>
                     <span class="genre-tag">City-Builder</span>
                     <span class="genre-tag">Simulation</span>
                     <h3>Stellar Forge</h3>
@@ -248,19 +251,19 @@
             <p>Retrouvez les derniers carnets de bord techniques de notre équipe de développement.</p>
 
             <article class="card card-stack">
-                <p><small class="text-accent" style="text-transform:uppercase;letter-spacing:0.05em;font-size:0.8rem">Novembre 2026 • Équipe Rendu & Optimisation</small></p>
+                <p><small class="devlog-meta">Novembre 2026 • Équipe Rendu & Optimisation</small></p>
                 <h3>Devlog #29 : Optimisation Steam Deck et shaders Vulkan</h3>
                 <p>Notre équipe détaille le profiling de la mémoire unifiée de l'APU AMD, la précompilation des pipelines graphiques Vulkan en SPIR-V statique et la compression géométrique 16 bits half-float réduisant la VRAM de 38 % pour un 60 FPS constant à 11 W de TDP.</p>
             </article>
 
             <article class="card card-stack">
-                <p><small class="text-accent" style="text-transform:uppercase;letter-spacing:0.05em;font-size:0.8rem">Novembre 2026 • Équipe Simulation & Physique</small></p>
+                <p><small class="devlog-meta">Novembre 2026 • Équipe Simulation & Physique</small></p>
                 <h3>Devlog #28 : Avaries en cascade et cinétique de micrométéorites</h3>
                 <p>Comment un débris de silicate de 2 mm à 40 km/s déclenche une réaction en chaîne dans les sous-systèmes du vaisseau : graphe de dépendances cycliques, surchauffe des calculateurs et dégradation de l'intégrateur orbital.</p>
             </article>
 
             <article class="card card-stack">
-                <p><small class="text-accent" style="text-transform:uppercase;letter-spacing:0.05em;font-size:0.8rem">Octobre 2026 • Pôle Audio & Acoustique</small></p>
+                <p><small class="devlog-meta">Octobre 2026 • Pôle Audio & Acoustique</small></p>
                 <h3>Devlog #27 : Synthèse granulaire et anomalies gravitationnelles</h3>
                 <p>Notre moteur audio granulaire procédural en C++ fragmente des micro-échantillons de craquements de glace antarctique et de résonances de câbles d'acier pour sonoriser les singularités gravitationnelles de l'Artefact.</p>
             </article>
@@ -296,7 +299,7 @@
             <details class="faq-item">
                 <summary>Comment suivre les avancées de développement du studio ?</summary>
                 <div class="faq-content">
-                    <p>Notre équipe publie régulièrement des retours techniques approfondis dans nos <a href="devlogs.html">29 carnets de bord (devlogs)</a> et partage ses annonces officielles sur son compte X (Twitter) <a href="https://twitter.com/FlexarionStudio" target="_blank" rel="noopener">@FlexarionStudio</a>.</p>
+                    <p>Notre équipe publie régulièrement des retours techniques approfondis dans nos <a href="devlogs.html">29 carnets de bord (devlogs)</a> et partage ses annonces officielles via nos communiqués et notre <a href="contact.html">espace presse officiel</a>.</p>
                 </div>
             </details>
         </section>
@@ -304,7 +307,7 @@
         <!-- ═══════ REJOINDRE ═══════ -->
         <section id="rejoindre">
             <h2>Rejoignez l'aventure Flexarion</h2>
-            <p>Suivez le développement de nos jeux de science-fiction, participez aux sessions de tests fermées et échangez avec notre équipe d'Aix-en-Provence. Ajoutez <strong>Anni 2810</strong> à votre liste de souhaits Steam pour être notifié dès le lancement en Early Access, et suivez-nous sur X (Twitter) pour ne manquer aucune annonce, aucun devlog et aucun aperçu exclusif de nos prochains titres.</p>
+            <p>Suivez le développement de nos jeux de science-fiction, participez aux sessions de tests fermées et échangez avec notre équipe d'Aix-en-Provence. Ajoutez <strong>Anni 2810</strong> à votre liste de souhaits Steam pour être notifié dès le lancement en Early Access, et consultez nos devlogs techniques pour ne manquer aucun aperçu exclusif de nos prochains titres.</p>
             <p><a href="contact.html" class="btn">Nous contacter & Espace Presse</a></p>
         </section>
     </main>
@@ -325,3 +328,4 @@
     <script>document.querySelector('.menu-toggle').addEventListener('click',function(){this.classList.toggle('active');document.querySelector('nav ul').classList.toggle('nav-open');this.setAttribute('aria-expanded',this.classList.contains('active'))})</script>
 </body>
 </html>
+
